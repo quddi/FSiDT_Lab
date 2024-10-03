@@ -9,14 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Windows\MainWindow.ButtonsHandlers.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Windows\MainWindow.ButtonsHandlers.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="ScottPlot.WPF" Version="5.0.39" />
   </ItemGroup>
 

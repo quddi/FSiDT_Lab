@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using FSiDT_Lab;
+using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;

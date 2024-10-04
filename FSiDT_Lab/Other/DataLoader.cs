@@ -5,11 +5,11 @@ using System.Globalization;
 using System.IO;
 using System.Windows;
 
-namespace EM_Lab_1
+namespace FSiDT_Lab
 {
     public static class DataLoader
     {
-        public static List<List<double>>? LoadValues()
+        public static List<DataRow>? LoadValues()
         {
             var openFileDialog = new OpenFileDialog();
 
@@ -32,22 +32,27 @@ namespace EM_Lab_1
             return null;
         }
 
-        private static List<List<double>> ReadNumbersFromFile(string filePath)
+        private static List<DataRow> ReadNumbersFromFile(string filePath)
         {
-            var result = new List<List<double>>();
+            var result = new List<DataRow>();
 
             try
             {
                 string[] lines = File.ReadAllLines(filePath);
 
-                foreach (string line in lines)
+                for (int i = 0; i < lines.Length; i++)
                 {
+                    string line = lines[i];
                     result.Add
                     (
-                        line.Replace('.', ',')
-                        .Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(ParseSelector)
-                        .ToList()
+                        new DataRow()
+                        { 
+                            Index = i + 1,
+                            Values = line.Replace('.', ',')
+                                .Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(ParseSelector)
+                                .ToList()
+                        }
                     );
                 }
             }

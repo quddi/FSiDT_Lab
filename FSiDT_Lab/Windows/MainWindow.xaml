@@ -7,7 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="680" Width="1680">
     <Grid>
-        <Button x:Name="UploadDataButton" Content="Завантажити дані" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="48" Width="125" FontSize="14" Click="UploadDataButtonClickHandler"/>
+        <Button x:Name="UploadDataButton" Content="Завантажити дані" HorizontalAlignment="Left" Margin="10,0,0,591" VerticalAlignment="Bottom" Height="48" Width="125" FontSize="14" Click="UploadDataButtonClickHandler"/>
+        <DataGrid x:Name="DataTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,830,254" Height="332" FontSize="14" VerticalAlignment="Bottom">
+            <UIElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </UIElement.RenderTransform>
+        </DataGrid>
 
     </Grid>
 </Window>

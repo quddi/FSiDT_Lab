@@ -1,17 +1,20 @@
-﻿using EM_Lab_1;
-using System.Windows;
+﻿using System.Windows;
 
 namespace FSiDT_Lab
 {
+
+    /*
+     - таблиця
+     - графіки (мінімум 2?)
+    
+     */
     public partial class MainWindow : Window
     {
-        private List<List<double>> _currentData;
+        private List<DataRow>? _currentData;
 
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        
     }
 }

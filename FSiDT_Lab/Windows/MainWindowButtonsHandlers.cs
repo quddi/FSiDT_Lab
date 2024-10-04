@@ -1,5 +1,4 @@
-﻿using EM_Lab_1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +11,9 @@ namespace FSiDT_Lab
     {
         private void UploadDataButtonClickHandler(object _, RoutedEventArgs __)
         {
-            _currentData = DataLoader.LoadValues()!;
+            _currentData = DataLoader.LoadValues();
+
+            UpdateDataTable();
         }
     }
 }

@@ -10,7 +10,6 @@
 //------------------------------------------------------------------------------
 
 using FSiDT_Lab;
-using ScottPlot;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -46,7 +45,7 @@ namespace FSiDT_Lab {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.4.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.8.0")]
         public void InitializeComponent() {
             
             #line 5 "..\..\..\App.xaml"
@@ -61,7 +60,7 @@ namespace FSiDT_Lab {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.4.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.8.0")]
         public static void Main() {
             FSiDT_Lab.App app = new FSiDT_Lab.App();
             app.InitializeComponent();

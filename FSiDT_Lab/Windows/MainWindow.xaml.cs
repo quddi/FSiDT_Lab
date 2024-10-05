@@ -11,10 +11,16 @@ namespace FSiDT_Lab
     public partial class MainWindow : Window
     {
         private List<DataRow>? _currentData;
+        private int _firstSignIndex;
+        private int _secondSignIndex;
+
+        private int? Dimensions => _currentData?.FirstOrDefault()?.Values?.Count;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            ResetAll();
         }
     }
 }

@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FSiDT_Lab"
+        xmlns:local="clr-namespace:FSiDT_Lab" xmlns:wpf="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="680" Width="1680">
     <Grid>
+        <wpf:WpfPlot x:Name="TwoSignsPlot" Height="332" VerticalAlignment="Bottom" Margin="0,0,10,254" HorizontalAlignment="Right" Width="815" FontSize="14"/>
         <Button x:Name="UploadDataButton" Content="Завантажити дані" HorizontalAlignment="Left" Margin="10,0,0,591" VerticalAlignment="Bottom" Height="48" Width="125" FontSize="14" Click="UploadDataButtonClickHandler"/>
         <DataGrid x:Name="DataTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,830,254" Height="332" FontSize="14" VerticalAlignment="Bottom">
             <UIElement.RenderTransform>
@@ -18,6 +19,17 @@
                 </TransformGroup>
             </UIElement.RenderTransform>
         </DataGrid>
+        <ComboBox x:Name="FirstSignComboBox" HorizontalAlignment="Right" Margin="0,0,705,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="FirstSignComboBoxSelectionChangedHandler">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <ComboBox x:Name="SecondSignComboBox" HorizontalAlignment="Right" Margin="0,0,525,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="SecondSignComboBoxSelectionChangedHandler"/>
+        <Button x:Name="SwapSignComboBoxes" Content="⇄" HorizontalAlignment="Right" Margin="0,0,650,591" VerticalAlignment="Bottom" Height="47" Width="50" FontSize="24" FontWeight="Bold" Click="SwapSignComboBoxesClickHandler"/>
+        <TextBox x:Name="SignComboBoxesStateTextBox" HorizontalAlignment="Right" Margin="0,0,337,591" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="183" Height="48" FontSize="14" TextAlignment="Center" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="Значення не мають бути пустими або співпадати!"/>
 
     </Grid>
 </Window>

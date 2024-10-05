@@ -11,6 +11,9 @@ namespace FSiDT_Lab
         private List<string> _firstSignComboBoxItemsSource = new();
         private List<string> _secondSignComboBoxItemsSource = new();
 
+        private int FirstSelectedIndex => SignLabel.ToIndex(_firstSignComboBoxItemsSource[FirstSignComboBox.SelectedIndex])!.Value;
+        private int SecondSelectedIndex => SignLabel.ToIndex(_secondSignComboBoxItemsSource[SecondSignComboBox.SelectedIndex])!.Value;
+
         private void UpdateDataTable()
         {
             if (_currentData == null)
@@ -103,6 +106,16 @@ namespace FSiDT_Lab
         
             if (FirstSignComboBox.SelectedIndex == SecondSignComboBox.SelectedIndex) return;
 
+            ResetTwoSignsPlot();
+
+            var firstIndex = FirstSelectedIndex;
+            var secondIndex = SecondSelectedIndex;
+
+            var xs = _currentData?.Select(dataRow => dataRow.Values[firstIndex]).ToList()!;
+            var ys = _currentData?.Select(dataRow => dataRow.Values[secondIndex]).ToList()!;
+
+            TwoSignsPlot.Plot.Add.ScatterPoints(xs, ys, color: Constants.DefaultPointsColor);
+            TwoSignsPlot.Refresh();
         }
     }
 }

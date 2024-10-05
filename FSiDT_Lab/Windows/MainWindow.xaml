@@ -19,7 +19,7 @@
                 </TransformGroup>
             </UIElement.RenderTransform>
         </DataGrid>
-        <ComboBox x:Name="FirstSignComboBox" HorizontalAlignment="Right" Margin="0,0,705,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="FirstSignComboBoxSelectionChangedHandler">
+        <ComboBox x:Name="FirstSignComboBox" HorizontalAlignment="Right" Margin="0,0,705,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="FirstSignComboBoxSelectionChangedHandler" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -27,7 +27,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <ComboBox x:Name="SecondSignComboBox" HorizontalAlignment="Right" Margin="0,0,525,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="SecondSignComboBoxSelectionChangedHandler"/>
+        <ComboBox x:Name="SecondSignComboBox" HorizontalAlignment="Right" Margin="0,0,525,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="SecondSignComboBoxSelectionChangedHandler" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button x:Name="SwapSignComboBoxes" Content="⇄" HorizontalAlignment="Right" Margin="0,0,650,591" VerticalAlignment="Bottom" Height="47" Width="50" FontSize="24" FontWeight="Bold" Click="SwapSignComboBoxesClickHandler"/>
         <TextBox x:Name="SignComboBoxesStateTextBox" HorizontalAlignment="Right" Margin="0,0,337,591" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="183" Height="48" FontSize="14" TextAlignment="Center" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="Значення не мають бути пустими або співпадати!"/>
 

@@ -9,6 +9,7 @@ namespace FSiDT_Lab
             ResetDataTable();
             ResetSignComboBoxes();
             ResetSignComboBoxesStateTextBox();
+            ResetTwoSignsPlot();
         }
 
         private void ResetDataTable()
@@ -27,6 +28,12 @@ namespace FSiDT_Lab
         {
             SignComboBoxesStateTextBox.Text = string.Empty;
             SignComboBoxesStateTextBox.Background = Constants.DefaultTextBoxBrush;
+        }
+
+        private void ResetTwoSignsPlot()
+        {
+            TwoSignsPlot.Reset();
+            TwoSignsPlot.Refresh();
         }
     }
 }

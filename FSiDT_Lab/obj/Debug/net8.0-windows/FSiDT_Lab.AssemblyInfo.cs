@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FSiDT_Lab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00d10aa7e21f45bf23f5e54504fb2e6e0419067e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24b98255aae7e7d95ee972c67968c01e475f7e67")]
 [assembly: System.Reflection.AssemblyProductAttribute("FSiDT_Lab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FSiDT_Lab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,16 +9,16 @@ namespace FSiDT_Lab
 {
     public class DataRow
     {
-        public List<double> Values { get; init; }
+        public Coordinates? Coordinates { get; init; }
 
         public int Index { get; init; }
 
-        public int? ClusterIndex { get; init; }
+        public int? ClusterIndex { get; set; }
 
         public double this[int index]
         {
-            get => Values[index];
-            set => Values[index] = value;
+            get => Coordinates!.Values[index];
+            set => Coordinates!.Values[index] = value;
         }
     }
 }

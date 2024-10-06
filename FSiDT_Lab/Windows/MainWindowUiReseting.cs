@@ -6,6 +6,9 @@ namespace FSiDT_Lab
     {
         private void ResetAll()
         {
+            _currentData = null;
+            _clustersCenters = null;
+
             ResetDataTable();
             ResetSignComboBoxes();
             ResetSignComboBoxesStateTextBox();

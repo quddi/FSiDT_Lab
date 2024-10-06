@@ -46,12 +46,15 @@ namespace FSiDT_Lab
                     result.Add
                     (
                         new DataRow()
-                        { 
+                        {
                             Index = i + 1,
-                            Values = line.Replace('.', ',')
-                                .Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
-                                .Select(ParseSelector)
-                                .ToList()
+                            Coordinates = new Coordinates
+                            (
+                                line.Replace('.', ',')
+                                    .Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
+                                    .Select(ParseSelector)
+                                    .ToList()
+                            )
                         }
                     );
                 }

@@ -11,13 +11,15 @@ namespace FSiDT_Lab
     public partial class MainWindow : Window
     {
         private List<DataRow>? _currentData;
+        private List<Coordinates>? _clustersCenters;
+
         private int _firstSignIndex;
         private int _secondSignIndex;
         private int? _clustersCount;
 
         private bool _isInitialized;
 
-        private int? Dimensions => _currentData?.FirstOrDefault()?.Values?.Count;
+        private int? Dimensions => _currentData?.FirstOrDefault()?.Coordinates?.Values.Count;
 
         public MainWindow()
         {

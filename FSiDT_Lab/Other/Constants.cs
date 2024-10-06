@@ -6,6 +6,10 @@ namespace FSiDT_Lab
     {
         public const int FontSize = 14;
         public const int NoElementComboBoxIndex = -1;
+        public const int FirstElementIndex = 0;
+        public const int MaxClasterizationIterations = 50;
+        public const double MaxRelativeChance = 1d;
+        public const double DoubleComparsionTolerance = 0.00001d;
 
         public static readonly Color OkColor = Color.FromRgb(161, 255, 162);
         public static readonly Color NotOkColor = Color.FromRgb(255, 164, 161);

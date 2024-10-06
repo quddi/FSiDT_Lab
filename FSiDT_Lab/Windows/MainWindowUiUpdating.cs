@@ -50,7 +50,7 @@ namespace FSiDT_Lab
                 {
                     Header = SignLabel.FromIndex(i),
                     FontSize = Constants.FontSize,
-                    Binding = new Binding($"Values[{i}]"),
+                    Binding = new Binding($"[{i}]"),
                     Width = 100
                 };
                 DataTable.Columns.Add(column);
@@ -118,8 +118,8 @@ namespace FSiDT_Lab
             TwoSignsPlot.Plot.XLabel(FirstSelectedLabel);
             TwoSignsPlot.Plot.YLabel(SecondSelectedLabel);
 
-            var xs = _currentData?.Select(dataRow => dataRow.Values[firstIndex]).ToList()!;
-            var ys = _currentData?.Select(dataRow => dataRow.Values[secondIndex]).ToList()!;
+            var xs = _currentData?.Select(dataRow => dataRow[firstIndex]).ToList()!;
+            var ys = _currentData?.Select(dataRow => dataRow[secondIndex]).ToList()!;
 
             TwoSignsPlot.Plot.Add.ScatterPoints(xs, ys, color: Constants.DefaultPlotColor);
             TwoSignsPlot.Refresh();
@@ -141,7 +141,7 @@ namespace FSiDT_Lab
             void DrawCurve(DataRow row)
             {
                 var coordinates = xs
-                    .Zip(row.Values, (x, y) => new Coordinates { X = x, Y = y })
+                    .Zip(row.Coordinates!.Values, (x, y) => new ScottPlot.Coordinates { X = x, Y = y })
                     .ToArray();
 
                 ParallelCoordinatesPlot.Plot.Add

@@ -10,6 +10,7 @@ namespace FSiDT_Lab
             ResetSignComboBoxes();
             ResetSignComboBoxesStateTextBox();
             ResetTwoSignsPlot();
+            ResetParallelCoordinatesPlot();
         }
 
         private void ResetDataTable()
@@ -33,7 +34,19 @@ namespace FSiDT_Lab
         private void ResetTwoSignsPlot()
         {
             TwoSignsPlot.Reset();
+
+            TwoSignsPlot.Plot.Title("Точковий графік двох ознак");
+
             TwoSignsPlot.Refresh();
+        }
+
+        private void ResetParallelCoordinatesPlot()
+        {
+            ParallelCoordinatesPlot.Reset();
+
+            ParallelCoordinatesPlot.Plot.Title("Графік паралельних координат");
+
+            ParallelCoordinatesPlot.Refresh();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace FSiDT_Lab
 
             UpdateDataTable();
             UpdateSignComboBoxesItems();
+            UpdateParallelCoordinatesPlot();
         }
 
         private void FirstSignComboBoxSelectionChangedHandler(object _, SelectionChangedEventArgs eventArgs)

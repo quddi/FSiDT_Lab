@@ -154,5 +154,48 @@ namespace FSiDT_Lab
                 }
             }
         }
+
+        private void UpdateClustersCount()
+        {
+            var input = ClustersCountInputTextBox.Text;
+
+            if (string.IsNullOrEmpty(input))
+            {
+                ClustersCountMessageTextBox.Background = Constants.DefaultTextBoxBrush;
+                ClustersCountMessageTextBox.Text = string.Empty;
+                return;
+            }
+
+            if (_currentData == null)
+            {
+                ClustersCountMessageTextBox.Background = Constants.DefaultTextBoxBrush;
+                ClustersCountMessageTextBox.Text = "Очікуються дані!";
+                return;
+            }
+
+            if (!int.TryParse(input, out var clustersCount))
+            {
+                ClustersCountMessageTextBox.Background = Constants.NotOkBrush;
+                ClustersCountMessageTextBox.Text = "Не вдалося зчитати значення!";
+
+                _clustersCount = null;
+
+                return;
+            }
+
+            if (1 < clustersCount && clustersCount < _currentData.Count / 2)
+            {
+                ClustersCountMessageTextBox.Background = Constants.OkBrush;
+                ClustersCountMessageTextBox.Text = "✓";
+                _clustersCount = clustersCount;
+            }
+            else
+            {
+                ClustersCountMessageTextBox.Background = Constants.NotOkBrush;
+                ClustersCountMessageTextBox.Text = $"Значення має бути [2, {_currentData.Count / 2}]!";
+
+                _clustersCount = null;
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace FSiDT_Lab
             UpdateDataTable();
             UpdateSignComboBoxesItems();
             UpdateParallelCoordinatesPlot();
+            UpdateClustersCount();
         }
 
         private void FirstSignComboBoxSelectionChangedHandler(object _, SelectionChangedEventArgs eventArgs)
@@ -39,6 +40,17 @@ namespace FSiDT_Lab
             (FirstSignComboBox.SelectedIndex, SecondSignComboBox.SelectedIndex) 
                 =
             (SecondSignComboBox.SelectedIndex, FirstSignComboBox.SelectedIndex);
+        }
+
+        private void ClustersCountInputTextBoxTextChangedHandler(object _, TextChangedEventArgs __)
+        {
+            if (_isInitialized)
+                UpdateClustersCount();
+        }
+
+        private void ClusterizeButtonClickHandler(object _, RoutedEventArgs __)
+        {
+
         }
     }
 }

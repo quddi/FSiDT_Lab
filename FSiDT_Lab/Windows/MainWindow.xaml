@@ -9,7 +9,7 @@
     <Grid>
         <wpf:WpfPlot x:Name="TwoSignsPlot" Height="254" VerticalAlignment="Bottom" Margin="0,0,10,332" HorizontalAlignment="Right" Width="815" FontSize="14"/>
         <wpf:WpfPlot x:Name="ParallelCoordinatesPlot" Height="317" VerticalAlignment="Bottom" Margin="0,0,10,10" HorizontalAlignment="Right" Width="815" FontSize="14"/>
-        <Button x:Name="UploadDataButton" Content="Завантажити дані" HorizontalAlignment="Left" Margin="10,0,0,591" VerticalAlignment="Bottom" Height="48" Width="125" FontSize="14" Click="UploadDataButtonClickHandler"/>
+        <Button x:Name="UploadDataButton" Content="Завантажити дані" Margin="10,0,0,591" VerticalAlignment="Bottom" Height="48" FontSize="14" Click="UploadDataButtonClickHandler" HorizontalAlignment="Left" Width="127" FontStretch="Normal"/>
         <DataGrid x:Name="DataTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,830,332" Height="254" FontSize="14" VerticalAlignment="Bottom">
             <UIElement.RenderTransform>
                 <TransformGroup>
@@ -31,6 +31,32 @@
         <ComboBox x:Name="SecondSignComboBox" HorizontalAlignment="Right" Margin="0,0,525,591" VerticalAlignment="Bottom" Width="120" Height="48" SelectionChanged="SecondSignComboBoxSelectionChangedHandler" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button x:Name="SwapSignComboBoxes" Content="⇄" HorizontalAlignment="Right" Margin="0,0,650,591" VerticalAlignment="Bottom" Height="47" Width="50" FontSize="24" FontWeight="Bold" Click="SwapSignComboBoxesClickHandler"/>
         <TextBox x:Name="SignComboBoxesStateTextBox" HorizontalAlignment="Right" Margin="0,0,337,591" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="183" Height="48" FontSize="14" TextAlignment="Center" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="Значення не мають бути пустими або співпадати!"/>
+        <TextBox Margin="140,0,0,591" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="48" FontSize="14" IsReadOnly="True" Text="Кількість кластерів:" HorizontalAlignment="Left" Width="176"/>
+        <TextBox x:Name="ClustersCountInputTextBox" Margin="266,0,0,616" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="21" FontSize="14" Text="1000" RenderTransformOrigin="0.5,0.5" TextChanged="ClustersCountInputTextBoxTextChangedHandler" HorizontalAlignment="Left" Width="48">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.308"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="ClustersCountMessageTextBox" Margin="142,0,0,593" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="21" FontSize="14" IsReadOnly="True" Text="1000" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="172">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="ClusterizeButton" Content="Кластеризувати" Margin="321,0,830,591" VerticalAlignment="Bottom" Height="23" FontSize="14" Click="ClusterizeButtonClickHandler"/>
+        <ComboBox x:Name="ClusterizationTypeDropDown" Margin="321,0,830,617" VerticalAlignment="Bottom" FontSize="14" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="k-means"/>
+            <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="Ієрархічної: метод найближчого сусіда"/>
+        </ComboBox>
 
     </Grid>
 </Window>

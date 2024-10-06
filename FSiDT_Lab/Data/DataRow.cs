@@ -13,6 +13,8 @@ namespace FSiDT_Lab
 
         public int Index { get; init; }
 
+        public int? ClusterIndex { get; init; }
+
         public double this[int index]
         {
             get => Values[index];

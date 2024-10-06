@@ -9,6 +9,8 @@ namespace FSiDT_Lab
             ResetDataTable();
             ResetSignComboBoxes();
             ResetSignComboBoxesStateTextBox();
+            ResetClustersCount();
+
             ResetTwoSignsPlot();
             ResetParallelCoordinatesPlot();
         }
@@ -47,6 +49,11 @@ namespace FSiDT_Lab
             ParallelCoordinatesPlot.Plot.Title("Графік паралельних координат");
 
             ParallelCoordinatesPlot.Refresh();
+        }
+
+        private void ResetClustersCount()
+        {
+            ClustersCountInputTextBox.Text = string.Empty;
         }
     }
 }

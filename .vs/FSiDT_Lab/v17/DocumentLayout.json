@@ -3,53 +3,46 @@
   "WorkspaceRootPath": "D:\\CSharpProjects\\FSiDT_Lab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\843c6895589d1d09a2a13eb4a09825b2dc329153df70c0abf47d0f8bb8cb7447\\WpfXamlLoader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\SourceServer\\0004409594e5437401a819e683220afcd101282b5d39186df2a79d7c8231ef93\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireacting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireacting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\fb15084c48174bff3023217d1ad58e803e1e4322708722f333707ce4bd465108\\ItemCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\SourceServer\\6d3d6915fb8eb2dff479f5bb95553652c391472bee4692dcb39fae7ab1399e6d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Nullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\signlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\signlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\73dc1fb799f48af96170823513b55dc63f6e4b5ff000ef27230685b25f0a629a\\MainWindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\datarow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\data\\datarow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,17 +52,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "MainWindowUiReacting.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
               "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAMwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:37:54.555Z",
               "IsPinned": true,
@@ -77,26 +70,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAmwBAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T19:35:28.806Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindow.xaml",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml",
-              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindow.xaml",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml*",
+              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-09-23T19:35:30.247Z",
               "IsPinned": true,
@@ -104,30 +83,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\App.xaml.cs",
-              "RelativeDocumentMoniker": "FSiDT_Lab\\App.xaml.cs",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\App.xaml.cs",
-              "RelativeToolTip": "FSiDT_Lab\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
+              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAlwBwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T19:47:30.876Z",
-              "IsPinned": true
+              "WhenOpened": "2024-09-23T19:35:28.806Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Constants.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\Constants.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\Constants.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\Constants.cs",
               "RelativeToolTip": "FSiDT_Lab\\Other\\Constants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:58:56.64Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -137,7 +116,7 @@
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
               "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAADwv3AAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAAswL0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:52:15.296Z",
               "IsPinned": true,
@@ -145,65 +124,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "DataLoader.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\DataLoader.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\DataLoader.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\DataLoader.cs",
               "RelativeToolTip": "FSiDT_Lab\\Other\\DataLoader.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAnwDoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAtwCYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T18:59:28.297Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ItemCollection.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\fb15084c48174bff3023217d1ad58e803e1e4322708722f333707ce4bd465108\\ItemCollection.cs",
-              "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\fb15084c48174bff3023217d1ad58e803e1e4322708722f333707ce4bd465108\\ItemCollection.cs",
-              "ViewState": "AgIAAGgFAAAAAAAAAAAjwHAFAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:53:04.389Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SignLabel.cs",
-              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\SignLabel.cs",
-              "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\SignLabel.cs",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\SignLabel.cs",
-              "RelativeToolTip": "FSiDT_Lab\\Other\\SignLabel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T08:29:25.32Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindowUiReseting.cs",
-              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
-              "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
-              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T18:34:47.376Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\App.xaml",
-              "RelativeDocumentMoniker": "FSiDT_Lab\\App.xaml",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\App.xaml",
-              "RelativeToolTip": "FSiDT_Lab\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-05T09:50:58.759Z",
+              "DocumentIndex": 7,
+              "Title": "SignLabel.cs",
+              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\SignLabel.cs",
+              "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\SignLabel.cs",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\SignLabel.cs",
+              "RelativeToolTip": "FSiDT_Lab\\Other\\SignLabel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T08:29:25.32Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindowUiReseting.cs",
+              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
+              "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
+              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T18:34:47.376Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -221,10 +178,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
@@ -232,26 +185,42 @@
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WpfXamlLoader.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\843c6895589d1d09a2a13eb4a09825b2dc329153df70c0abf47d0f8bb8cb7447\\WpfXamlLoader.cs",
-              "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\843c6895589d1d09a2a13eb4a09825b2dc329153df70c0abf47d0f8bb8cb7447\\WpfXamlLoader.cs [Read Only]",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAwwHcAAAADAAAAAQAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Nullable.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\6d3d6915fb8eb2dff479f5bb95553652c391472bee4692dcb39fae7ab1399e6d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Nullable.cs",
+              "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\6d3d6915fb8eb2dff479f5bb95553652c391472bee4692dcb39fae7ab1399e6d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Nullable.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAiwCwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T07:19:52.063Z",
+              "WhenOpened": "2024-10-06T09:19:55.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\73dc1fb799f48af96170823513b55dc63f6e4b5ff000ef27230685b25f0a629a\\MainWindow.cs",
+              "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\Temp\\.vsdbgsrc\\73dc1fb799f48af96170823513b55dc63f6e4b5ff000ef27230685b25f0a629a\\MainWindow.cs [Read Only]",
+              "ViewState": "AgIAACMBAAAAAAAAAAAkwCkBAAADAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T08:58:16.54Z",
               "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExecutionContext.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\0004409594e5437401a819e683220afcd101282b5d39186df2a79d7c8231ef93\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs",
-              "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\0004409594e5437401a819e683220afcd101282b5d39186df2a79d7c8231ef93\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAuwLIAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "DataRow.cs",
+              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\DataRow.cs",
+              "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\DataRow.cs",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\DataRow.cs",
+              "RelativeToolTip": "FSiDT_Lab\\Data\\DataRow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T07:19:20.21Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T08:40:05.899Z"
             }
           ]
         }

@@ -123,6 +123,9 @@ namespace FSiDT_Lab
                     changedAnyCenter = TryRecomputeCenter(grouping) || changedAnyCenter;
                 }
             }
+
+            if (SignComboBoxesOk) 
+                UpdateTwoSignsPlot();
         }
 
         private bool TryRecomputeCenter(IGrouping<int?, DataRow> grouping)

@@ -1,4 +1,6 @@
-﻿namespace FSiDT_Lab
+﻿using System.Drawing;
+
+namespace FSiDT_Lab
 {
     public static class ExtensionsMethods
     {
@@ -9,10 +11,9 @@
 
         public static int GetRandomIndex(List<double> indexesChances)
         {
-            if (indexesChances.Sum().IsNotEqual(Constants.MaxRelativeChance))
-                throw new ArgumentException("Indexes chances sum was not 100!");
+            var maxChance = indexesChances.Sum();
 
-            var randomChance = System.Random.Shared.NextDouble(0d, Constants.MaxRelativeChance);
+            var randomChance = System.Random.Shared.NextDouble(0d, maxChance);
 
             var sum = 0d;
 
@@ -53,6 +54,16 @@
         public static double NextDouble(this System.Random random, double min, double max)
         {
             return random.NextDouble() * (max - min) + min;
+        }
+
+        public static ScottPlot.Color NextColor(this System.Random random)
+        {
+            return new ScottPlot.Color
+            (
+                (byte)random.Next(Constants.MaxColorComponent + 1),
+                (byte)random.Next(Constants.MaxColorComponent + 1),
+                (byte)random.Next(Constants.MaxColorComponent + 1)
+            );
         }
     }
 }

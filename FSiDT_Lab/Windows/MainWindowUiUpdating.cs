@@ -11,12 +11,20 @@ namespace FSiDT_Lab
     {
         private List<string> _firstSignComboBoxItemsSource = new();
         private List<string> _secondSignComboBoxItemsSource = new();
+        private Dictionary<Coordinates, Color> _clustersColors = new();
 
         private string FirstSelectedLabel => _firstSignComboBoxItemsSource[FirstSignComboBox.SelectedIndex];
         private string SecondSelectedLabel => _secondSignComboBoxItemsSource[SecondSignComboBox.SelectedIndex];
 
         private int FirstSelectedIndex => SignLabel.ToIndex(FirstSelectedLabel)!.Value;
         private int SecondSelectedIndex => SignLabel.ToIndex(SecondSelectedLabel)!.Value;
+
+        private bool AnySignComboBoxInEmpty => FirstSignComboBox.SelectedIndex == Constants.NoElementComboBoxIndex ||
+                SecondSignComboBox.SelectedIndex == Constants.NoElementComboBoxIndex;
+
+        private bool SignComboBoxesHaveSameValue => FirstSignComboBox.SelectedIndex == SecondSignComboBox.SelectedIndex;
+
+        private bool SignComboBoxesOk => !AnySignComboBoxInEmpty && !SignComboBoxesHaveSameValue;
 
         private void UpdateDataTable()
         {
@@ -81,16 +89,13 @@ namespace FSiDT_Lab
 
         private void UpdateSignComboBoxesState()
         {
-            var anyIsEmpty = FirstSignComboBox.SelectedIndex == Constants.NoElementComboBoxIndex ||
-                SecondSignComboBox.SelectedIndex == Constants.NoElementComboBoxIndex;
-
-            if (anyIsEmpty)
+            if (AnySignComboBoxInEmpty)
             {
                 ResetSignComboBoxesStateTextBox();
             }
             else
             {
-                var ok = FirstSignComboBox.SelectedIndex != SecondSignComboBox.SelectedIndex;
+                var ok = !SignComboBoxesHaveSameValue;
 
                 SignComboBoxesStateTextBox.Background = ok
                     ? Constants.OkBrush
@@ -117,11 +122,26 @@ namespace FSiDT_Lab
 
             TwoSignsPlot.Plot.XLabel(FirstSelectedLabel);
             TwoSignsPlot.Plot.YLabel(SecondSelectedLabel);
+            var changeColor = _currentData!.All(row => row.ClusterIndex != null);
 
-            var xs = _currentData?.Select(dataRow => dataRow[firstIndex]).ToList()!;
-            var ys = _currentData?.Select(dataRow => dataRow[secondIndex]).ToList()!;
+            if (changeColor && !_clustersColors.Any())
+            {
+                _clustersColors = _clustersCenters!
+                    .ToDictionary(coordinates => coordinates, _ => Random.Shared.NextColor());
+            }
 
-            TwoSignsPlot.Plot.Add.ScatterPoints(xs, ys, color: Constants.DefaultPlotColor);
+            for (var i = 0; i < _currentData!.Count; i++)
+            {
+                var coordinates = _currentData[i].Coordinates!;
+                var clusterCenterCoordinates = _clustersCenters?[_currentData[i].ClusterIndex!.Value];
+                var color = changeColor 
+                    ? _clustersColors[clusterCenterCoordinates!]
+                    : Constants.DefaultPlotColor;
+
+                TwoSignsPlot.Plot.Add.Scatter(coordinates.Values[firstIndex], 
+                    coordinates.Values[secondIndex], color: color);
+            }
+
             TwoSignsPlot.Refresh();
         }
 

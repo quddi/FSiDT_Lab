@@ -8,6 +8,8 @@ namespace FSiDT_Lab
         {
             _currentData = null;
             _clustersCenters = null;
+            _clustersCount = null;
+            _clustersColors.Clear();
 
             ResetDataTable();
             ResetSignComboBoxes();

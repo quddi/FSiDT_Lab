@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace FSiDT_Lab
@@ -124,8 +118,13 @@ namespace FSiDT_Lab
                 }
             }
 
+            _clustersColors = _clustersCenters!
+                    .ToDictionary(coordinates => coordinates, _ => Random.Shared.NextColor());
+
             if (SignComboBoxesOk) 
                 UpdateTwoSignsPlot();
+
+            UpdateDataTable();
         }
 
         private bool TryRecomputeCenter(IGrouping<int?, DataRow> grouping)

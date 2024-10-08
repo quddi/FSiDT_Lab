@@ -1,9 +1,11 @@
 ﻿
 using ScottPlot;
+using System.Drawing;
 using System.Reflection.Metadata;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media;
 
 namespace FSiDT_Lab
 {
@@ -11,7 +13,7 @@ namespace FSiDT_Lab
     {
         private List<string> _firstSignComboBoxItemsSource = new();
         private List<string> _secondSignComboBoxItemsSource = new();
-        private Dictionary<Coordinates, Color> _clustersColors = new();
+        private Dictionary<Coordinates, ScottPlot.Color> _clustersColors = new();
 
         private string FirstSelectedLabel => _firstSignComboBoxItemsSource[FirstSignComboBox.SelectedIndex];
         private string SecondSelectedLabel => _secondSignComboBoxItemsSource[SecondSignComboBox.SelectedIndex];
@@ -26,10 +28,14 @@ namespace FSiDT_Lab
 
         private bool SignComboBoxesOk => !AnySignComboBoxInEmpty && !SignComboBoxesHaveSameValue;
 
+        private bool IsClusterized => _currentData!.All(row => row.ClusterIndex != null);
+
         private void UpdateDataTable()
         {
             if (_currentData == null)
                 return;
+
+            ResetDataTable();
             
             SetColumns();
 
@@ -54,15 +60,31 @@ namespace FSiDT_Lab
 
             for (int i = 0; i < Dimensions; i++)
             {
-                var column = new DataGridTextColumn()
-                {
-                    Header = SignLabel.FromIndex(i),
-                    FontSize = Constants.FontSize,
-                    Binding = new Binding($"[{i}]"),
-                    Width = 100
-                };
-                DataTable.Columns.Add(column);
+                DataTable.Columns.Add
+                (
+                    new DataGridTextColumn
+                    {
+                        Header = SignLabel.FromIndex(i),
+                        FontSize = Constants.FontSize,
+                        Binding = new Binding($"[{i}]"),
+                        Width = 100
+                    }
+                );
             }
+
+            if (IsClusterized)
+            {
+                DataTable.Columns.Add
+                (
+                    new DataGridTextColumn
+                    {
+                        Header = "Кластер",
+                        FontSize = Constants.FontSize,
+                        Binding = new Binding($"ClusterIndex"),
+                        Width = 100
+                    }
+                );
+            }   
         }
 
         private void UpdateSignComboBoxesItems()
@@ -122,19 +144,12 @@ namespace FSiDT_Lab
 
             TwoSignsPlot.Plot.XLabel(FirstSelectedLabel);
             TwoSignsPlot.Plot.YLabel(SecondSelectedLabel);
-            var changeColor = _currentData!.All(row => row.ClusterIndex != null);
-
-            if (changeColor && !_clustersColors.Any())
-            {
-                _clustersColors = _clustersCenters!
-                    .ToDictionary(coordinates => coordinates, _ => Random.Shared.NextColor());
-            }
 
             for (var i = 0; i < _currentData!.Count; i++)
             {
                 var coordinates = _currentData[i].Coordinates!;
                 var clusterCenterCoordinates = _clustersCenters?[_currentData[i].ClusterIndex!.Value];
-                var color = changeColor 
+                var color = IsClusterized
                     ? _clustersColors[clusterCenterCoordinates!]
                     : Constants.DefaultPlotColor;
 

@@ -65,5 +65,26 @@ namespace FSiDT_Lab
                 (byte)random.Next(Constants.MaxColorComponent + 1)
             );
         }
+
+        public static ScottPlot.Color ConvertToScott(this System.Drawing.Color color)
+        {
+            return new ScottPlot.Color(color);
+        }
+
+        public static System.Drawing.Color ConvertToDrawing(this ScottPlot.Color color)
+        {
+            return System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
+        }
+
+        public static System.Windows.Media.Color ConvertToMedia(this ScottPlot.Color color)
+        {
+            return new System.Windows.Media.Color
+            {
+                A = color.A,
+                R = color.R,
+                G = color.G,
+                B = color.B,
+            };
+        }
     }
 }

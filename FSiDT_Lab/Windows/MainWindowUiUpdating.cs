@@ -165,27 +165,32 @@ namespace FSiDT_Lab
             ResetParallelCoordinatesPlot();
 
             var xs = Enumerable.Range(0, Dimensions!.Value).ToList();
+            var isClusterized = IsClusterized;
 
             foreach (var dataRow in _currentData!)
             {
-                DrawCurve(dataRow);
+                var color = IsClusterized 
+                    ? _clustersColors[_clustersCenters![dataRow.ClusterIndex!.Value]]
+                    : Constants.DefaultPlotColor;
+
+                DrawCurve(dataRow, color);
             }
 
             ParallelCoordinatesPlot.Refresh();
 
-            void DrawCurve(DataRow row)
+            void DrawCurve(DataRow row, ScottPlot.Color color)
             {
                 var coordinates = xs
                     .Zip(row.Coordinates!.Values, (x, y) => new ScottPlot.Coordinates { X = x, Y = y })
                     .ToArray();
 
                 ParallelCoordinatesPlot.Plot.Add
-                    .ScatterPoints(coordinates, color: Constants.DefaultPlotColor);
+                    .ScatterPoints(coordinates, color: color);
 
                 for (int i = 0; i < Dimensions - 1; i++)
                 {
                     var line = ParallelCoordinatesPlot.Plot.Add.Line(coordinates[i], coordinates[i + 1]);
-                    line.Color = Constants.DefaultPlotColor;
+                    line.Color = color;
                 }
             }
         }

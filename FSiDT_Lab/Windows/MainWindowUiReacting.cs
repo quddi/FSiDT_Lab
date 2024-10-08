@@ -124,6 +124,7 @@ namespace FSiDT_Lab
             if (SignComboBoxesOk) 
                 UpdateTwoSignsPlot();
 
+            UpdateParallelCoordinatesPlot();
             UpdateDataTable();
         }
 

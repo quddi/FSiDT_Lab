@@ -139,6 +139,7 @@ namespace FSiDT_Lab
 
             UpdateParallelCoordinatesPlot();
             UpdateDataTable();
+            UpdateClustersCentersTable();
         }
 
         private bool TryRecomputeCenter(IGrouping<int?, DataRow> grouping)

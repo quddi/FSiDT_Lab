@@ -9,6 +9,7 @@ namespace FSiDT_Lab
             _context = null!;
 
             ResetDataTable();
+            ResetClustersCentersTable();
             ResetSignComboBoxes();
             ResetSignComboBoxesStateTextBox();
             ResetClustersCount();
@@ -21,6 +22,12 @@ namespace FSiDT_Lab
         {
             DataTable.Columns.Clear();
             DataTable.Items.Clear();
+        }
+
+        private void ResetClustersCentersTable()
+        {
+            ClustersCentersTable.Columns.Clear();
+            ClustersCentersTable.Items.Clear();
         }
 
         private void ResetSignComboBoxes()

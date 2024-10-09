@@ -18,28 +18,17 @@ namespace FSiDT_Lab
 
             ResetDataTable();
             
-            SetTablesColumns();
+            SetDataTableColumns();
 
             foreach (var row in _context.CurrentData)
             {
                 DataTable.Items.Add(row);
             }
-        }
+        } 
 
-        private void SetTablesColumns()
+        private void SetDataTableColumns()
         {
             DataTable.Columns.Add
-            (
-                new DataGridTextColumn()
-                {
-                    Header = "№",
-                    FontSize = Constants.FontSize,
-                    Binding = new Binding("Index"),
-                    Width = 30
-                }
-            );
-
-            ClustersCentersTable.Columns.Add
             (
                 new DataGridTextColumn()
                 {
@@ -53,17 +42,6 @@ namespace FSiDT_Lab
             for (int i = 0; i < _context.Dimensions; i++)
             {
                 DataTable.Columns.Add
-                (
-                    new DataGridTextColumn
-                    {
-                        Header = SignLabel.FromIndex(i),
-                        FontSize = Constants.FontSize,
-                        Binding = new Binding($"[{i}]"),
-                        Width = 100
-                    }
-                );
-
-                ClustersCentersTable.Columns.Add
                 (
                     new DataGridTextColumn
                     {
@@ -87,8 +65,51 @@ namespace FSiDT_Lab
                         Width = 100
                     }
                 );
-            }   
+            }
         }
+
+        private void UpdateClustersCentersTable()
+        {
+            if (_context.CurrentData == null || !_context.IsClusterized)
+                return;
+
+            ResetClustersCentersTable();
+
+            SetClustersCentersTableColumns();
+
+            foreach (var row in _context.ClustersCentersDatas!)
+            {
+                ClustersCentersTable.Items.Add(row);
+            }
+        }
+
+        private void SetClustersCentersTableColumns()
+        {
+            ClustersCentersTable.Columns.Add
+            (
+                new DataGridTextColumn()
+                {
+                    Header = "№",
+                    FontSize = Constants.FontSize,
+                    Binding = new Binding("Index"),
+                    Width = 30
+                }
+            );
+
+            for (int i = 0; i < _context.Dimensions; i++)
+            {
+                ClustersCentersTable.Columns.Add
+                (
+                    new DataGridTextColumn
+                    {
+                        Header = SignLabel.FromIndex(i),
+                        FontSize = Constants.FontSize,
+                        Binding = new Binding($"[{i}]"),
+                        Width = 100
+                    }
+                );
+            }
+        } 
 
         private void UpdateSignComboBoxesItems()
         {

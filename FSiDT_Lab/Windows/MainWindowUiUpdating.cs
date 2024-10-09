@@ -11,41 +11,22 @@ namespace FSiDT_Lab
 {
     public partial class MainWindow : Window
     {
-        private List<string> _firstSignComboBoxItemsSource = new();
-        private List<string> _secondSignComboBoxItemsSource = new();
-        private Dictionary<Coordinates, ScottPlot.Color> _clustersColors = new();
-
-        private string FirstSelectedLabel => _firstSignComboBoxItemsSource[FirstSignComboBox.SelectedIndex];
-        private string SecondSelectedLabel => _secondSignComboBoxItemsSource[SecondSignComboBox.SelectedIndex];
-
-        private int FirstSelectedIndex => SignLabel.ToIndex(FirstSelectedLabel)!.Value;
-        private int SecondSelectedIndex => SignLabel.ToIndex(SecondSelectedLabel)!.Value;
-
-        private bool AnySignComboBoxInEmpty => FirstSignComboBox.SelectedIndex == Constants.NoElementComboBoxIndex ||
-                SecondSignComboBox.SelectedIndex == Constants.NoElementComboBoxIndex;
-
-        private bool SignComboBoxesHaveSameValue => FirstSignComboBox.SelectedIndex == SecondSignComboBox.SelectedIndex;
-
-        private bool SignComboBoxesOk => !AnySignComboBoxInEmpty && !SignComboBoxesHaveSameValue;
-
-        private bool IsClusterized => _currentData!.All(row => row.ClusterIndex != null);
-
         private void UpdateDataTable()
         {
-            if (_currentData == null)
+            if (_context.CurrentData == null)
                 return;
 
             ResetDataTable();
             
-            SetColumns();
+            SetTablesColumns();
 
-            foreach (var row in _currentData)
+            foreach (var row in _context.CurrentData)
             {
                 DataTable.Items.Add(row);
             }
         }
 
-        private void SetColumns()
+        private void SetTablesColumns()
         {
             DataTable.Columns.Add
             (
@@ -58,7 +39,18 @@ namespace FSiDT_Lab
                 }
             );
 
-            for (int i = 0; i < Dimensions; i++)
+            ClustersCentersTable.Columns.Add
+            (
+                new DataGridTextColumn()
+                {
+                    Header = "№",
+                    FontSize = Constants.FontSize,
+                    Binding = new Binding("Index"),
+                    Width = 30
+                }
+            );
+
+            for (int i = 0; i < _context.Dimensions; i++)
             {
                 DataTable.Columns.Add
                 (
@@ -70,9 +62,20 @@ namespace FSiDT_Lab
                         Width = 100
                     }
                 );
+
+                ClustersCentersTable.Columns.Add
+                (
+                    new DataGridTextColumn
+                    {
+                        Header = SignLabel.FromIndex(i),
+                        FontSize = Constants.FontSize,
+                        Binding = new Binding($"[{i}]"),
+                        Width = 100
+                    }
+                );
             }
 
-            if (IsClusterized)
+            if (_context.IsClusterized)
             {
                 DataTable.Columns.Add
                 (
@@ -89,35 +92,35 @@ namespace FSiDT_Lab
 
         private void UpdateSignComboBoxesItems()
         {
-            if (_currentData == null) return;
+            if (_context.CurrentData == null) return;
 
-            _firstSignComboBoxItemsSource.Clear();
-            _secondSignComboBoxItemsSource.Clear();
+            _context.FirstSignComboBoxItemsSource.Clear();
+            _context.SecondSignComboBoxItemsSource.Clear();
 
             FirstSignComboBox.SelectedIndex = Constants.NoElementComboBoxIndex;
             SecondSignComboBox.SelectedIndex = Constants.NoElementComboBoxIndex;
 
-            _firstSignComboBoxItemsSource = Enumerable.Range(0, Dimensions!.Value)
+            _context.FirstSignComboBoxItemsSource = Enumerable.Range(0, _context.Dimensions!.Value)
                 .Select(SignLabel.FromIndex)
                 .ToList()!;
 
-            _secondSignComboBoxItemsSource = Enumerable.Range(0, Dimensions!.Value)
+            _context.SecondSignComboBoxItemsSource = Enumerable.Range(0, _context.Dimensions!.Value)
                 .Select(SignLabel.FromIndex)
                 .ToList()!;
 
-            FirstSignComboBox.ItemsSource = _firstSignComboBoxItemsSource;
-            SecondSignComboBox.ItemsSource = _secondSignComboBoxItemsSource;
+            FirstSignComboBox.ItemsSource = _context.FirstSignComboBoxItemsSource;
+            SecondSignComboBox.ItemsSource = _context.SecondSignComboBoxItemsSource;
         }
 
         private void UpdateSignComboBoxesState()
         {
-            if (AnySignComboBoxInEmpty)
+            if (_context.AnySignComboBoxInEmpty)
             {
                 ResetSignComboBoxesStateTextBox();
             }
             else
             {
-                var ok = !SignComboBoxesHaveSameValue;
+                var ok = !_context.SignComboBoxesHaveSameValue;
 
                 SignComboBoxesStateTextBox.Background = ok
                     ? Constants.OkBrush
@@ -139,18 +142,17 @@ namespace FSiDT_Lab
 
             ResetTwoSignsPlot();
 
-            var firstIndex = FirstSelectedIndex;
-            var secondIndex = SecondSelectedIndex;
+            var firstIndex = _context.FirstSelectedIndex;
+            var secondIndex = _context.SecondSelectedIndex;
 
-            TwoSignsPlot.Plot.XLabel(FirstSelectedLabel);
-            TwoSignsPlot.Plot.YLabel(SecondSelectedLabel);
+            TwoSignsPlot.Plot.XLabel(_context.FirstSelectedLabel);
+            TwoSignsPlot.Plot.YLabel(_context.SecondSelectedLabel);
 
-            for (var i = 0; i < _currentData!.Count; i++)
+            for (var i = 0; i < _context.CurrentData!.Count; i++)
             {
-                var coordinates = _currentData[i].Coordinates!;
-                var clusterCenterCoordinates = _clustersCenters?[_currentData[i].ClusterIndex!.Value];
-                var color = IsClusterized
-                    ? _clustersColors[clusterCenterCoordinates!]
+                var coordinates = _context.CurrentData[i].Coordinates!;
+                var color = _context.IsClusterized
+                    ? _context.ClustersCentersDatas?[_context.CurrentData[i].ClusterIndex!.Value].Color
                     : Constants.DefaultPlotColor;
 
                 TwoSignsPlot.Plot.Add.Scatter(coordinates.Values[firstIndex], 
@@ -164,13 +166,13 @@ namespace FSiDT_Lab
         {
             ResetParallelCoordinatesPlot();
 
-            var xs = Enumerable.Range(0, Dimensions!.Value).ToList();
-            var isClusterized = IsClusterized;
+            var xs = Enumerable.Range(0, _context.Dimensions!.Value).ToList();
+            var isClusterized = _context.IsClusterized;
 
-            foreach (var dataRow in _currentData!)
+            foreach (var dataRow in _context.CurrentData!)
             {
-                var color = IsClusterized 
-                    ? _clustersColors[_clustersCenters![dataRow.ClusterIndex!.Value]]
+                var color = _context.IsClusterized 
+                    ? _context.ClustersCentersDatas![dataRow.ClusterIndex!.Value].Color
                     : Constants.DefaultPlotColor;
 
                 DrawCurve(dataRow, color);
@@ -187,7 +189,7 @@ namespace FSiDT_Lab
                 ParallelCoordinatesPlot.Plot.Add
                     .ScatterPoints(coordinates, color: color);
 
-                for (int i = 0; i < Dimensions - 1; i++)
+                for (int i = 0; i < _context.Dimensions - 1; i++)
                 {
                     var line = ParallelCoordinatesPlot.Plot.Add.Line(coordinates[i], coordinates[i + 1]);
                     line.Color = color;
@@ -206,7 +208,7 @@ namespace FSiDT_Lab
                 return;
             }
 
-            if (_currentData == null)
+            if (_context.CurrentData == null)
             {
                 ClustersCountMessageTextBox.Background = Constants.DefaultTextBoxBrush;
                 ClustersCountMessageTextBox.Text = "Очікуються дані!";
@@ -218,23 +220,23 @@ namespace FSiDT_Lab
                 ClustersCountMessageTextBox.Background = Constants.NotOkBrush;
                 ClustersCountMessageTextBox.Text = "Не вдалося зчитати значення!";
 
-                _clustersCount = null;
+                _context.ClustersCount = null;
 
                 return;
             }
 
-            if (1 < clustersCount && clustersCount < _currentData.Count / 2)
+            if (1 < clustersCount && clustersCount < _context.CurrentData.Count / 2)
             {
                 ClustersCountMessageTextBox.Background = Constants.OkBrush;
                 ClustersCountMessageTextBox.Text = "✓";
-                _clustersCount = clustersCount;
+                _context.ClustersCount = clustersCount;
             }
             else
             {
                 ClustersCountMessageTextBox.Background = Constants.NotOkBrush;
-                ClustersCountMessageTextBox.Text = $"Значення має бути [2, {_currentData.Count / 2}]!";
+                ClustersCountMessageTextBox.Text = $"Значення має бути [2, {_context.CurrentData.Count / 2}]!";
 
-                _clustersCount = null;
+                _context.ClustersCount = null;
             }
         }
     }

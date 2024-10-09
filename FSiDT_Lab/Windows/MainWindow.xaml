@@ -57,6 +57,16 @@
             <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="k-means"/>
             <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="Ієрархічної: метод найближчого сусіда"/>
         </ComboBox>
+        <DataGrid x:Name="ClustersCentersTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,830,10" Height="317" FontSize="14" VerticalAlignment="Bottom">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
 
     </Grid>
 </Window>

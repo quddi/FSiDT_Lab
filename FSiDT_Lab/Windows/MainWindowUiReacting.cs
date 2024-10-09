@@ -9,7 +9,7 @@ namespace FSiDT_Lab
         {
             get
             {
-                if (_currentData == null)
+                if (_context == null)
                 {
                     MessageBox.Show("Для продовження завантажте дані!");
                     return false;
@@ -23,7 +23,10 @@ namespace FSiDT_Lab
         {
             ResetAll();
 
-            _currentData = DataLoader.LoadValues();
+            _context = new Context(FirstSignComboBox, SecondSignComboBox)
+            {
+                CurrentData = DataLoader.LoadValues()
+            };
 
             UpdateDataTable();
             UpdateSignComboBoxesItems();
@@ -66,9 +69,11 @@ namespace FSiDT_Lab
 
         private void ComputeClustersCenters()
         {
-            var firstClusterCenter = _currentData!.Random();
+            _context.ClustersCentersDatas = new();
 
-            var rowPairDistances = _currentData!
+            var firstClusterCenter = _context.CurrentData!.Random();
+
+            var rowPairDistances = _context.CurrentData!
                 .Except(new List<DataRow> { firstClusterCenter })
                 .Select(row => (row, Math.Pow(Compute.EuclidDistance(firstClusterCenter.Coordinates!, row.Coordinates!), 2f)))
                 .ToList();
@@ -83,20 +88,31 @@ namespace FSiDT_Lab
                 .Select(squaredDistance => squaredDistance / sum)
                 .ToList();
 
-            var clustersCenters = new List<Coordinates> { firstClusterCenter.Coordinates! };
+            var clustersCentersCoordinates = new List<Coordinates> { firstClusterCenter.Coordinates! };
 
-            for (int i = 0; i < _clustersCount - 1; i++)
+            for (int i = 0; i < _context.ClustersCount - 1; i++)
             {
                 var index = ExtensionsMethods.GetRandomIndex(chances);
 
-                clustersCenters.Add(rowPairDistances[index].Item1.Coordinates!);
+                clustersCentersCoordinates.Add(rowPairDistances[index].Item1.Coordinates!);
 
                 rowPairDistances.RemoveAt(index);
                 squaredDistances.RemoveAt(index);
                 chances.RemoveAt(index);
             }
 
-            _clustersCenters = clustersCenters;
+            for (int i = 0; i < clustersCentersCoordinates.Count; i++)
+            {
+                _context.ClustersCentersDatas.Add
+                (
+                    new ClusterData
+                    {
+                        Index = i,
+                        Coordinates = clustersCentersCoordinates[i],
+                        Color = Random.Shared.NextColor()
+                    }
+                );
+            }
         }
 
         private void Clusterize()
@@ -109,7 +125,7 @@ namespace FSiDT_Lab
             {
                 ReassignClusters();
 
-                var grouped = _currentData!.GroupBy(x => x.ClusterIndex);
+                var grouped = _context.CurrentData!.GroupBy(x => x.ClusterIndex);
                 changedAnyCenter = false;
 
                 foreach (var grouping in grouped)
@@ -118,10 +134,7 @@ namespace FSiDT_Lab
                 }
             }
 
-            _clustersColors = _clustersCenters!
-                    .ToDictionary(coordinates => coordinates, _ => Random.Shared.NextColor());
-
-            if (SignComboBoxesOk) 
+            if (_context.SignComboBoxesOk) 
                 UpdateTwoSignsPlot();
 
             UpdateParallelCoordinatesPlot();
@@ -135,24 +148,24 @@ namespace FSiDT_Lab
             var clusterIndex = grouping.Key;
 
             var newAverageCoordinates = GetAverageCoordinates(grouping);
-            var currentAverageCoordinates = _clustersCenters![grouping.Key!.Value];
+            var currentAverageCoordinates = _context.ClustersCentersDatas![grouping.Key!.Value];
 
-            if (newAverageCoordinates.IsEqual(currentAverageCoordinates))
+            if (newAverageCoordinates.IsEqual(currentAverageCoordinates.Coordinates))
                 changedAnyCenter = true;
 
-            _clustersCenters![grouping.Key!.Value] = newAverageCoordinates;
+            _context.ClustersCentersDatas![grouping.Key!.Value].Coordinates = newAverageCoordinates;
             
             return changedAnyCenter;
         }
 
         private void ReassignClusters()
         {
-            foreach (var dataRow in _currentData!)
+            foreach (var dataRow in _context.CurrentData!)
             {
-                var nearestCenter = _clustersCenters!.MinBy(center =>
-                    Compute.EuclidDistance(dataRow.Coordinates!, center));
+                var nearestCenter = _context.ClustersCentersDatas!.MinBy(centerData =>
+                    Compute.EuclidDistance(dataRow.Coordinates!, centerData.Coordinates));
 
-                var index = _clustersCenters!.IndexOf(nearestCenter!);
+                var index = _context.ClustersCentersDatas!.IndexOf(nearestCenter!);
 
                 dataRow.ClusterIndex = index;
             }
@@ -160,7 +173,7 @@ namespace FSiDT_Lab
 
         private Coordinates GetAverageCoordinates(IGrouping<int?, DataRow?> grouping)
         {
-            var result = new Coordinates(Dimensions!.Value);
+            var result = new Coordinates(_context.Dimensions!.Value);
 
             foreach (var dataRow in grouping)
             {

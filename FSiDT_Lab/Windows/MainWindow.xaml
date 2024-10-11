@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="680" Width="1680">
     <Grid>
-        <wpf:WpfPlot x:Name="TwoSignsPlot" Height="254" VerticalAlignment="Bottom" Margin="0,0,10,332" HorizontalAlignment="Right" Width="815" FontSize="20"/>
+        <wpf:WpfPlot x:Name="TwoSignsPlot" Height="254" VerticalAlignment="Bottom" Margin="0,0,337,332" HorizontalAlignment="Right" Width="488" FontSize="20"/>
         <wpf:WpfPlot x:Name="ParallelCoordinatesPlot" Height="317" VerticalAlignment="Bottom" Margin="0,0,10,10" HorizontalAlignment="Right" Width="815" FontSize="14"/>
         <Button x:Name="UploadDataButton" Content="Завантажити дані" Margin="10,0,0,591" VerticalAlignment="Bottom" Height="48" FontSize="14" Click="UploadDataButtonClickHandler" HorizontalAlignment="Left" Width="127" FontStretch="Normal"/>
         <DataGrid x:Name="DataTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,830,332" Height="254" FontSize="14" VerticalAlignment="Bottom">
@@ -57,7 +57,7 @@
             <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="k-means"/>
             <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="Ієрархічної: метод найближчого сусіда"/>
         </ComboBox>
-        <DataGrid x:Name="ClustersCentersTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,830,10" Height="317" FontSize="14" VerticalAlignment="Bottom">
+        <DataGrid x:Name="ClustersCentersTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,1037,10" Height="317" FontSize="14" VerticalAlignment="Bottom">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -70,6 +70,17 @@
         <TextBox Margin="0,0,130,591" TextWrapping="Wrap" Text="Розмір елементів" VerticalAlignment="Bottom" Height="47" HorizontalAlignment="Right" Width="202" TextAlignment="Center"/>
         <Slider x:Name="PlotsElementsSizeSlider" HorizontalAlignment="Right" Margin="0,0,193,596" VerticalAlignment="Bottom" Width="130" Minimum="1" ValueChanged="PlotsElementsSizeSliderValueChangedHandler"/>
         <TextBox x:Name="PlotsElementsSizeTextBox" HorizontalAlignment="Right" Margin="0,0,141,596" TextWrapping="Wrap" Text="1" VerticalAlignment="Bottom" Width="47" Height="19" FontSize="14" TextAlignment="Center" Foreground="#FF818181" Background="#FFEAEAEA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Focusable="False"/>
+        <wpf:WpfPlot x:Name="ClustersCountsEvaluationPlot" Height="254" VerticalAlignment="Bottom" Margin="0,0,10,332" HorizontalAlignment="Right" Width="322" FontSize="20"/>
+        <DataGrid x:Name="ClustersCountsEvaluationTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,830,10" Height="317" FontSize="14" VerticalAlignment="Bottom" Focusable="False" HorizontalAlignment="Right" Width="202">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
 
     </Grid>
 </Window>

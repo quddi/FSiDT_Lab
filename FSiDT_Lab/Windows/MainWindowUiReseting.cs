@@ -10,12 +10,15 @@ namespace FSiDT_Lab
 
             ResetDataTable();
             ResetClustersCentersTable();
+            ResetClustersCountsEvaluationTable();
+
             ResetSignComboBoxes();
             ResetSignComboBoxesStateTextBox();
             ResetClustersCount();
 
             ResetTwoSignsPlot();
             ResetParallelCoordinatesPlot();
+            ResetClustersCountsEvaluationPlot();
         }
 
         private void ResetDataTable()
@@ -28,6 +31,12 @@ namespace FSiDT_Lab
         {
             ClustersCentersTable.Columns.Clear();
             ClustersCentersTable.Items.Clear();
+        }
+
+        private void ResetClustersCountsEvaluationTable()
+        {
+            ClustersCountsEvaluationTable.Columns.Clear();
+            ClustersCountsEvaluationTable.Items.Clear();
         }
 
         private void ResetSignComboBoxes()
@@ -61,6 +70,15 @@ namespace FSiDT_Lab
             ParallelCoordinatesPlot.Plot.Title("Графік паралельних координат");
 
             ParallelCoordinatesPlot.Refresh();
+        }
+
+        private void ResetClustersCountsEvaluationPlot()
+        {
+            ClustersCountsEvaluationPlot.Reset();
+
+            ClustersCountsEvaluationPlot.Plot.Title("Оцінка кількості кластерів");
+
+            ClustersCountsEvaluationPlot.Refresh();
         }
 
         private void ResetClustersCount()

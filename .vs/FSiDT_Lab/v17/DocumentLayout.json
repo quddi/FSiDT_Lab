@@ -3,26 +3,6 @@
   "WorkspaceRootPath": "D:\\CSharpProjects\\FSiDT_Lab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireacting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireacting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\plotscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\data\\plotscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,8 +11,36 @@
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuiupdating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\clusterscountevaluationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\data\\clusterscountevaluationdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireseting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\windows\\mainwindowuireacting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\windows\\mainwindowuireacting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\plotscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\data\\plotscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\clusterdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,10 +59,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\AppData\\Local\\SourceServer\\6d3d6915fb8eb2dff479f5bb95553652c391472bee4692dcb39fae7ab1399e6d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Nullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\other\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|solutionrelative:fsidt_lab\\other\\dataloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B836924B-DC49-425B-B636-E7179A415E71}|FSiDT_Lab\\FSiDT_Lab.csproj|d:\\csharpprojects\\fsidt_lab\\fsidt_lab\\data\\coordinates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,17 +83,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "MainWindowUiReacting.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
               "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiReacting.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAMwMYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAALkAAAAAAAAAAAAMwMYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:37:54.555Z",
               "IsPinned": true,
@@ -97,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindow.xaml",
@@ -110,13 +114,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAvwAsAAAAFAAAAAAAAAA==",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawBsAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T19:35:28.806Z",
               "IsPinned": true,
@@ -124,13 +128,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Constants.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\Constants.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\Constants.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\Constants.cs",
               "RelativeToolTip": "FSiDT_Lab\\Other\\Constants.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:58:56.64Z",
               "IsPinned": true,
@@ -138,13 +142,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MainWindowUiUpdating.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
               "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiUpdating.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAAM4AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAUwJMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T19:52:15.296Z",
               "IsPinned": true,
@@ -152,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "DataLoader.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\DataLoader.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\DataLoader.cs",
@@ -161,11 +165,12 @@
               "ViewState": "AgIAADwAAAAAAAAAAAAYwAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T18:59:28.297Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SignLabel.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\SignLabel.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\SignLabel.cs",
@@ -178,13 +183,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "MainWindowUiReseting.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
               "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
               "RelativeToolTip": "FSiDT_Lab\\Windows\\MainWindowUiReseting.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAwC8AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAmwBQAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T18:34:47.376Z",
               "IsPinned": true,
@@ -221,6 +226,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ClustersCountEvaluationData.cs",
+              "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\ClustersCountEvaluationData.cs",
+              "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\ClustersCountEvaluationData.cs",
+              "ToolTip": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\ClustersCountEvaluationData.cs",
+              "RelativeToolTip": "FSiDT_Lab\\Data\\ClustersCountEvaluationData.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA1wAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T19:51:52.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "PlotsContext.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\PlotsContext.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\PlotsContext.cs",
@@ -233,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ClusterData.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\ClusterData.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\ClusterData.cs",
@@ -245,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Context.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\Context.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\Context.cs",
@@ -258,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Dictionary.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\a5b9b1eed9adda64635182353f8caa23e1b2160a8f6f452fee3e5faf66666b8d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs",
               "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\a5b9b1eed9adda64635182353f8caa23e1b2160a8f6f452fee3e5faf66666b8d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs",
@@ -268,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Coordinates.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\Coordinates.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\Coordinates.cs",
@@ -280,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "List.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\78ee0f90ea3a04ac89f30e9783e9dc866a87be62589e6273892f681e5d15b9a5\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\List.cs",
               "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\78ee0f90ea3a04ac89f30e9783e9dc866a87be62589e6273892f681e5d15b9a5\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\List.cs",
@@ -290,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Compute.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\Compute.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\Compute.cs",
@@ -302,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ExtensionsMethods.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Other\\ExtensionsMethods.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Other\\ExtensionsMethods.cs",
@@ -314,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Nullable.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\6d3d6915fb8eb2dff479f5bb95553652c391472bee4692dcb39fae7ab1399e6d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Nullable.cs",
               "ToolTip": "C:\\Users\\Admin\\AppData\\Local\\SourceServer\\6d3d6915fb8eb2dff479f5bb95553652c391472bee4692dcb39fae7ab1399e6d\\src\\libraries\\System.Private.CoreLib\\src\\System\\Nullable.cs",
@@ -324,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DataRow.cs",
               "DocumentMoniker": "D:\\CSharpProjects\\FSiDT_Lab\\FSiDT_Lab\\Data\\DataRow.cs",
               "RelativeDocumentMoniker": "FSiDT_Lab\\Data\\DataRow.cs",

@@ -16,8 +16,6 @@ namespace FSiDT_Lab
             if (_context.CurrentData == null)
                 return;
 
-            ResetDataTable();
-            
             SetDataTableColumns();
 
             foreach (var row in _context.CurrentData)
@@ -28,6 +26,8 @@ namespace FSiDT_Lab
 
         private void SetDataTableColumns()
         {
+            ResetDataTable();
+
             DataTable.Columns.Add
             (
                 new DataGridTextColumn()
@@ -73,8 +73,6 @@ namespace FSiDT_Lab
             if (_context.CurrentData == null || !_context.IsClusterized)
                 return;
 
-            ResetClustersCentersTable();
-
             SetClustersCentersTableColumns();
 
             foreach (var row in _context.ClustersCentersDatas!)
@@ -85,6 +83,8 @@ namespace FSiDT_Lab
 
         private void SetClustersCentersTableColumns()
         {
+            ResetClustersCentersTable();
+            
             ClustersCentersTable.Columns.Add
             (
                 new DataGridTextColumn()
@@ -110,6 +110,45 @@ namespace FSiDT_Lab
                 );
             }
         } 
+
+        private void UpdateClustersCountsEvaluationTable()
+        {
+
+        }
+
+        private void SetClustersCountsEvaluationTableColumns()
+        {
+            ResetClustersCountsEvaluationTable();
+
+            ClustersCountsEvaluationTable.Columns.Add
+            (
+                new DataGridTextColumn
+                {
+                    Header = "Кількість",
+                    FontSize = Constants.FontSize,
+                    Binding = new Binding("Count"),
+                }
+            );
+
+            ClustersCountsEvaluationTable.Columns.Add
+            (
+                new DataGridTextColumn
+                {
+                    Header = "Оцінка",
+                    FontSize = Constants.FontSize,
+                    Binding = new Binding("ValueString"),
+                }
+            );
+
+            ClustersCountsEvaluationTable.Columns.Add
+            (
+                new DataGridCheckBoxColumn
+                {
+                    Header = "Висновок",
+                    Binding = new Binding("Result"),
+                }
+            );
+        }
 
         private void UpdateSignComboBoxesItems()
         {

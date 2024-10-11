@@ -193,5 +193,19 @@ namespace FSiDT_Lab
 
             return result;
         }
+
+        private void PlotsElementsSizeSliderValueChangedHandler(object _, RoutedPropertyChangedEventArgs<double> __)
+        {
+            if (!_isInitialized)
+                return;
+
+            PlotsElementsSizeTextBox.Text = PlotsElementsSizeSlider.Value.ToString("#.##");
+
+            _context?.PlotsContext.SetPointsRadius(PointsRadius);
+            _context?.PlotsContext.SetClustersCenters(ClustersCentersRadius, ClustersCentersLineWidth);
+
+            TwoSignsPlot.Refresh();
+            ParallelCoordinatesPlot.Refresh();
+        }
     }
 }

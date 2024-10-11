@@ -135,6 +135,14 @@ namespace FSiDT_Lab
 
         private void UpdateSignComboBoxesState()
         {
+            if (_context == null)
+            {
+                SignComboBoxesStateTextBox.Background = Constants.DefaultTextBoxBrush;
+                SignComboBoxesStateTextBox.Text = string.Empty;
+
+                return;
+            }
+
             if (_context.AnySignComboBoxInEmpty)
             {
                 ResetSignComboBoxesStateTextBox();
@@ -176,10 +184,32 @@ namespace FSiDT_Lab
                     ? _context.ClustersCentersDatas?[_context.CurrentData[i].ClusterIndex!.Value].Color
                     : Constants.DefaultPlotColor;
 
-                TwoSignsPlot.Plot.Add.Scatter(coordinates.Values[firstIndex], 
-                    coordinates.Values[secondIndex], color: color);
+                var circle = TwoSignsPlot.Plot.Add.Circle(coordinates.Values[firstIndex], 
+                    coordinates.Values[secondIndex], PointsRadius);
+
+                circle.FillColor = color!.Value;
+                circle.LineColor = color!.Value;
+
+                _context.PlotsContext.TwoSignsPlotPoints.Add(circle);
             }
 
+            for (int i = 0; i < _context.ClustersCentersDatas?.Count; i++)
+            {
+                var data = _context.ClustersCentersDatas[i];
+                var coordinates = data.Coordinates!;
+                var color = data.Color;
+
+                var circle = TwoSignsPlot.Plot.Add.Circle(coordinates.Values[firstIndex],
+                    coordinates.Values[secondIndex], ClustersCentersRadius);
+
+                circle.FillColor = color;
+                circle.LineColor = Constants.ClustersCentersLineColor;
+                circle.LineWidth = ClustersCentersLineWidth;
+
+                _context.PlotsContext.TwoSignsPlotClustersCenters.Add(circle);
+            }
+
+            TwoSignsPlot.Plot.Axes.SquareUnits();
             TwoSignsPlot.Refresh();
         }
 

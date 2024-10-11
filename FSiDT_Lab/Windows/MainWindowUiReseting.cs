@@ -44,6 +44,9 @@ namespace FSiDT_Lab
 
         private void ResetTwoSignsPlot()
         {
+            _context?.PlotsContext.TwoSignsPlotPoints.Clear();
+            _context?.PlotsContext.TwoSignsPlotClustersCenters.Clear();
+
             TwoSignsPlot.Reset();
 
             TwoSignsPlot.Plot.Title("Точковий графік двох ознак");

@@ -75,7 +75,7 @@ namespace FSiDT_Lab
 
             SetClustersCentersTableColumns();
 
-            foreach (var row in _context.ClustersCentersDatas!)
+            foreach (var row in _context.ClustersDatas!)
             {
                 ClustersCentersTable.Items.Add(row);
             }
@@ -220,7 +220,7 @@ namespace FSiDT_Lab
             {
                 var coordinates = _context.CurrentData[i].Coordinates!;
                 var color = _context.IsClusterized
-                    ? _context.ClustersCentersDatas?[_context.CurrentData[i].ClusterIndex!.Value].Color
+                    ? _context.ClustersDatas?[_context.CurrentData[i].ClusterIndex!.Value].Color
                     : Constants.DefaultPlotColor;
 
                 var circle = TwoSignsPlot.Plot.Add.Circle(coordinates.Values[firstIndex], 
@@ -232,9 +232,9 @@ namespace FSiDT_Lab
                 _context.PlotsContext.TwoSignsPlotPoints.Add(circle);
             }
 
-            for (int i = 0; i < _context.ClustersCentersDatas?.Count; i++)
+            for (int i = 0; i < _context.ClustersDatas?.Count; i++)
             {
-                var data = _context.ClustersCentersDatas[i];
+                var data = _context.ClustersDatas[i];
                 var coordinates = data.Coordinates!;
                 var color = data.Color;
 
@@ -262,7 +262,7 @@ namespace FSiDT_Lab
             foreach (var dataRow in _context.CurrentData!)
             {
                 var color = _context.IsClusterized 
-                    ? _context.ClustersCentersDatas![dataRow.ClusterIndex!.Value].Color
+                    ? _context.ClustersDatas![dataRow.ClusterIndex!.Value].Color
                     : Constants.DefaultPlotColor;
 
                 DrawCurve(dataRow, color);

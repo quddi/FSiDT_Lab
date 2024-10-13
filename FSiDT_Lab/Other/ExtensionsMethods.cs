@@ -86,5 +86,30 @@ namespace FSiDT_Lab
                 B = color.B,
             };
         }
+
+        public static List<double> Average(this List<List<double>> doubles)
+        {
+            var dimensions = doubles.First().Count;
+            var count = doubles.Count;
+            var result = Enumerable.Repeat(0.0, dimensions).ToList();
+
+            foreach (var list in doubles!)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    result[i] += list[i] / count;
+                }
+            }
+
+            return result;
+        }
+
+        public static Coordinates Average(this IEnumerable<Coordinates> coordinates)
+        {
+            return new Coordinates 
+            { 
+                Values = coordinates.Select(coordinate => coordinate.Values).ToList().Average()
+            };
+        }
     }
 }

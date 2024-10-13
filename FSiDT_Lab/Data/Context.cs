@@ -8,7 +8,7 @@ public class Context
     private ComboBox _secondSignComboBox;
 
     public List<DataRow>? CurrentData { get; set; }
-    public List<ClusterData>? ClustersCentersDatas { get; set; }
+    public List<ClusterData>? ClustersDatas { get; set; }
 
     public int FirstSignIndex { get; set; }
     public int SecondSignIndex { get; set; }

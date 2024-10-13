@@ -69,7 +69,7 @@ namespace FSiDT_Lab
 
         private void ComputeClustersCenters()
         {
-            _context.ClustersCentersDatas = new();
+            _context.ClustersDatas = new();
 
             var firstClusterCenter = _context.CurrentData!.Random();
 
@@ -103,7 +103,7 @@ namespace FSiDT_Lab
 
             for (int i = 0; i < clustersCentersCoordinates.Count; i++)
             {
-                _context.ClustersCentersDatas.Add
+                _context.ClustersDatas.Add
                 (
                     new ClusterData
                     {
@@ -149,12 +149,12 @@ namespace FSiDT_Lab
             var clusterIndex = grouping.Key;
 
             var newAverageCoordinates = GetAverageCoordinates(grouping);
-            var currentAverageCoordinates = _context.ClustersCentersDatas![grouping.Key!.Value];
+            var currentAverageCoordinates = _context.ClustersDatas![grouping.Key!.Value];
 
             if (newAverageCoordinates.IsEqual(currentAverageCoordinates.Coordinates))
                 changedAnyCenter = true;
 
-            _context.ClustersCentersDatas![grouping.Key!.Value].Coordinates = newAverageCoordinates;
+            _context.ClustersDatas![grouping.Key!.Value].Coordinates = newAverageCoordinates;
             
             return changedAnyCenter;
         }
@@ -163,10 +163,10 @@ namespace FSiDT_Lab
         {
             foreach (var dataRow in _context.CurrentData!)
             {
-                var nearestCenter = _context.ClustersCentersDatas!.MinBy(centerData =>
+                var nearestCenter = _context.ClustersDatas!.MinBy(centerData =>
                     Compute.EuclidDistance(dataRow.Coordinates!, centerData.Coordinates));
 
-                var index = _context.ClustersCentersDatas!.IndexOf(nearestCenter!);
+                var index = _context.ClustersDatas!.IndexOf(nearestCenter!);
 
                 dataRow.ClusterIndex = index;
             }

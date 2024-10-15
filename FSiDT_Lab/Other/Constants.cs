@@ -9,6 +9,8 @@ namespace FSiDT_Lab
         public const int FirstElementIndex = 0;
         public const int MaxClasterizationIterations = 50;
         public const int MaxColorComponent= 255;
+        public const int EvaluationMinClustersCount = 2;
+        public const int EvaluationMaxClustersCount = 14;
         public const double MaxRelativeChance = 1d;
         public const double DoubleComparsionTolerance = 0.00001d;
         public const double PointsSizeMultiplier = 1.0;

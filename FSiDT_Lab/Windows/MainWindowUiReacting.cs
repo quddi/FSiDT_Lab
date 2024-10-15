@@ -32,6 +32,7 @@ namespace FSiDT_Lab
             UpdateSignComboBoxesItems();
             UpdateParallelCoordinatesPlot();
             UpdateClustersCount();
+            ComputeClustersCountEvaluation();
         }
 
         private void FirstSignComboBoxSelectionChangedHandler(object _, SelectionChangedEventArgs eventArgs)

@@ -1,5 +1,6 @@
 ﻿
 using ScottPlot;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Reflection.Metadata;
 using System.Windows;
@@ -13,10 +14,20 @@ namespace FSiDT_Lab
     {
         private void UpdateDataTable()
         {
-            if (_context.CurrentData == null)
+            if (_context?.CurrentData == null)
                 return;
 
             SetDataTableColumns();
+
+            var averageCoordinates = _context.CurrentData
+                .Select(data => data.Coordinates)!
+                .Average();
+
+            DataTable.Items.Add(new DataRow
+            {
+                Coordinates = averageCoordinates,
+                IsAverageData = true
+            });
 
             foreach (var row in _context.CurrentData)
             {
@@ -34,12 +45,12 @@ namespace FSiDT_Lab
                 {
                     Header = "№",
                     FontSize = Constants.FontSize,
-                    Binding = new Binding("Index"),
-                    Width = 30
+                    Binding = new Binding("IndexString"),
+                    Width = 70
                 }
             );
 
-            for (int i = 0; i < _context.Dimensions; i++)
+            for (int i = 0; i < _context!.Dimensions; i++)
             {
                 DataTable.Columns.Add
                 (
@@ -61,7 +72,7 @@ namespace FSiDT_Lab
                     {
                         Header = "Кластер",
                         FontSize = Constants.FontSize,
-                        Binding = new Binding($"ClusterIndex"),
+                        Binding = new Binding($"ClusterIndexString"),
                         Width = 100
                     }
                 );
@@ -70,7 +81,7 @@ namespace FSiDT_Lab
 
         private void UpdateClustersCentersTable()
         {
-            if (_context.CurrentData == null || !_context.IsClusterized)
+            if (_context?.CurrentData == null || !_context.IsClusterized)
                 return;
 
             SetClustersCentersTableColumns();
@@ -96,7 +107,7 @@ namespace FSiDT_Lab
                 }
             );
 
-            for (int i = 0; i < _context.Dimensions; i++)
+            for (int i = 0; i < _context!.Dimensions; i++)
             {
                 ClustersCentersTable.Columns.Add
                 (
@@ -113,7 +124,15 @@ namespace FSiDT_Lab
 
         private void UpdateClustersCountsEvaluationTable()
         {
+            if (_context?.CurrentData == null)
+                return;
 
+            SetClustersCountsEvaluationTableColumns();
+
+            foreach (var evaluation in _context.ClustersCountsEvaluation!)
+            {
+                ClustersCountsEvaluationTable.Items.Add(evaluation);
+            }
         }
 
         private void SetClustersCountsEvaluationTableColumns()
@@ -126,7 +145,7 @@ namespace FSiDT_Lab
                 {
                     Header = "Кількість",
                     FontSize = Constants.FontSize,
-                    Binding = new Binding("Count"),
+                    Binding = new Binding("ClustersCount"),
                 }
             );
 
@@ -256,7 +275,7 @@ namespace FSiDT_Lab
         {
             ResetParallelCoordinatesPlot();
 
-            var xs = Enumerable.Range(0, _context.Dimensions!.Value).ToList();
+            var xs = Enumerable.Range(0, _context!.Dimensions!.Value).ToList();
             var isClusterized = _context.IsClusterized;
 
             foreach (var dataRow in _context.CurrentData!)
@@ -285,6 +304,20 @@ namespace FSiDT_Lab
                     line.Color = color;
                 }
             }
+        }
+
+        private void UpdateClustersCountsEvaluationPlot()
+        {
+            if (_context?.ClustersCountsEvaluation == null)
+                return;
+
+            ResetClustersCountsEvaluationPlot();
+
+            var xs = _context.ClustersCountsEvaluation.Select(evaluation => evaluation.ClustersCount).ToArray();
+            var ys = _context.ClustersCountsEvaluation.Select(evaluation => evaluation.Value).ToArray();
+
+            ClustersCountsEvaluationPlot.Plot.Add.Scatter(xs, ys, color: Constants.DefaultPlotColor);
+            ClustersCountsEvaluationPlot.Refresh();
         }
 
         private void UpdateClustersCount()
@@ -328,6 +361,30 @@ namespace FSiDT_Lab
 
                 _context.ClustersCount = null;
             }
+        }
+
+        private void ComputeClustersCountEvaluation()
+        {
+            _context!.ClustersCountsEvaluation = new();
+
+            for (int i = Constants.EvaluationMinClustersCount; i <= Constants.EvaluationMaxClustersCount; i++)
+            {
+                var index = Compute.CHIndex(_context!.CurrentData!, i);
+
+                _context!.ClustersCountsEvaluation.Add
+                (
+                    new ClustersCountEvaluationData
+                    {
+                        ClustersCount = i,
+                        Value = index
+                    }
+                );
+            }
+
+            _context!.ClustersCountsEvaluation.MaxBy(evaluation => evaluation.Value)!.Result = true;
+
+            UpdateClustersCountsEvaluationTable();
+            UpdateClustersCountsEvaluationPlot();
         }
     }
 }

@@ -20,6 +20,13 @@ namespace FSiDT_Lab
                 .Sum());
         }
 
+        public static double CHIndex(List<DataRow> dataRows, int clustersCount)
+        {
+            var clustersDatas = KMeansClusterization(dataRows, clustersCount);
+
+            return CHIndex(dataRows, clustersDatas);
+        }
+
         public static double CHIndex(List<DataRow> dataRows, List<ClusterData> clusterDatas)
         {
             var commonCenter = dataRows.Select(row => row.Coordinates)!.Average();

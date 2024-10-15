@@ -2,7 +2,7 @@
 
 public class ClustersCountEvaluationData
 {
-    public int Count { get; set; }
+    public int ClustersCount { get; set; }
 
     public double Value { get; set; }
 

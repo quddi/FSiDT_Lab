@@ -9,6 +9,7 @@ public class Context
 
     public List<DataRow>? CurrentData { get; set; }
     public List<ClusterData>? ClustersDatas { get; set; }
+    public List<ClustersCountEvaluationData>? ClustersCountsEvaluation { get; set; }
 
     public int FirstSignIndex { get; set; }
     public int SecondSignIndex { get; set; }
@@ -32,7 +33,7 @@ public class Context
 
     public bool SignComboBoxesOk => !AnySignComboBoxInEmpty && !SignComboBoxesHaveSameValue;
 
-    public bool IsClusterized => CurrentData!.All(row => row.ClusterIndex != null);
+    public bool IsClusterized => ClustersDatas != null && CurrentData!.All(row => row.ClusterIndex != null);
 
     public int? Dimensions => CurrentData?.FirstOrDefault()?.Coordinates?.Values.Count;
 

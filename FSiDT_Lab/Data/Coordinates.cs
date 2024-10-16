@@ -23,5 +23,19 @@
         {
             Values = values;
         }
+
+        public override string ToString()
+        {
+            foreach (var value in Values)
+            {
+                Constants.StringBuilder.Append(value.ToString()).Append(' ');
+            }
+
+            var result = Constants.StringBuilder.ToString();
+
+            Constants.StringBuilder.Clear();
+
+            return result;
+        }
     }
 }

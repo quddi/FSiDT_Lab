@@ -75,6 +75,9 @@ namespace FSiDT_Lab
 
             _context.ClustersDatas = Compute.KMeansClusterization(_context.CurrentData, _context.ClustersCount!.Value);
 
+            if (_context.ClustersDatas.Count != _context.ClustersCount)
+                MessageBox.Show($"Не вдалося поділити дані на {_context.ClustersCount}, було поділено на {_context.ClustersDatas.Count}");
+
             if (_context.SignComboBoxesOk) 
                 UpdateTwoSignsPlot();
 

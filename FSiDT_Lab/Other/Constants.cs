@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System.Text;
+using System.Windows.Media;
 
 namespace FSiDT_Lab
 {
@@ -28,5 +29,7 @@ namespace FSiDT_Lab
         public static readonly Brush NotOkBrush = new SolidColorBrush(NotOkColor);
         public static readonly Brush DefaultTextBoxBrush = new SolidColorBrush(DefaultTextBoxColor);
         public static readonly Brush InputTextBoxBrush = new SolidColorBrush(InputTextBoxColor);
+
+        public static readonly StringBuilder StringBuilder = new();
     }
 }

@@ -13,5 +13,10 @@
             get => Coordinates!.Values[index];
             set => Coordinates!.Values[index] = value;
         }
+
+        public override string ToString()
+        {
+            return $"Cluster [{Index}]: {Coordinates}";
+        }
     }
 }

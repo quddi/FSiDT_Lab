@@ -1,10 +1,12 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Drawing.Text;
+using System.Windows.Controls;
 
 namespace FSiDT_Lab
 {
     public static class Compute
     {
-        public static double EuclidDistance(List<double> a, List<double> b)
+        public static double EuclideDistance(List<double> a, List<double> b)
         {
             if (a.Count == 0)
                 throw new ArgumentException("a contains 0 elements!");
@@ -20,11 +22,13 @@ namespace FSiDT_Lab
                 .Sum());
         }
 
-        public static double CHIndex(List<DataRow> dataRows, int clustersCount)
+        public static double? CHIndex(List<DataRow> dataRows, int clustersCount)
         {
             var clustersDatas = KMeansClusterization(dataRows, clustersCount);
 
-            return CHIndex(dataRows, clustersDatas);
+            return clustersDatas.Count == clustersCount 
+                ? CHIndex(dataRows, clustersDatas)
+                : null;
         }
 
         public static double CHIndex(List<DataRow> dataRows, List<ClusterData> clusterDatas)
@@ -42,7 +46,7 @@ namespace FSiDT_Lab
 
             foreach (var clusterData in clusterDatas)
             {
-                var distance = Compute.EuclidDistance(clusterData.Coordinates, commonCenter);
+                var distance = Compute.EuclideDistance(clusterData.Coordinates!, commonCenter);
                 var elementsCount = elementsByClusters[clusterData].Count;
 
                 numerator += elementsCount * distance * distance / (clusterDatas.Count - 1);
@@ -56,7 +60,7 @@ namespace FSiDT_Lab
 
                 foreach (var element in elements)
                 {
-                    var distance = Compute.EuclidDistance(element.Coordinates!, clusterData.Coordinates);
+                    var distance = Compute.EuclideDistance(element.Coordinates!, clusterData.Coordinates);
                     denominator += distance * distance / (dataRows.Count - clusterDatas.Count);
                 }
             }
@@ -66,36 +70,20 @@ namespace FSiDT_Lab
 
         public static List<ClusterData> StartClustersCenters(List<DataRow> data, int clustersCount)
         {
-            List<ClusterData> clustersDatas = new();
-
+            var clustersDatas = new List<ClusterData>();
             var firstClusterCenter = data.Random();
-
-            var rowPairDistances = data!
-                .Except(new List<DataRow> { firstClusterCenter })
-                .Select(row => (row, Math.Pow(Compute.EuclidDistance(firstClusterCenter.Coordinates!, row.Coordinates!), 2f)))
-                .ToList();
-
-            var squaredDistances = rowPairDistances
-                .Select(pair => pair.Item2)
-                .ToList();
-
-            var sum = squaredDistances.Sum();
-
-            var chances = squaredDistances
-                .Select(squaredDistance => squaredDistance / sum)
-                .ToList();
-
             var clustersCentersCoordinates = new List<Coordinates> { firstClusterCenter.Coordinates! };
 
-            for (int i = 0; i < clustersCount - 1; i++)
+            while (clustersCentersCoordinates.Count < clustersCount)
             {
-                var index = ExtensionsMethods.GetRandomIndex(chances);
+                var distances = data
+                    .Select(point => clustersCentersCoordinates
+                        .Min(coordinates => Compute.EuclideDistance(point.Coordinates!.Values, coordinates!.Values)))
+                    .ToList();
 
-                clustersCentersCoordinates.Add(rowPairDistances[index].Item1.Coordinates!);
+                var newClusterCenter = GetNextClusterCenter(data, distances);
 
-                rowPairDistances.RemoveAt(index);
-                squaredDistances.RemoveAt(index);
-                chances.RemoveAt(index);
+                clustersCentersCoordinates.Add(newClusterCenter);
             }
 
             for (int i = 0; i < clustersCentersCoordinates.Count; i++)
@@ -112,6 +100,21 @@ namespace FSiDT_Lab
             }
 
             return clustersDatas;
+
+            Coordinates GetNextClusterCenter(List<DataRow> data, List<double> distances)
+            {
+                double totalDistance = distances.Sum();
+                double randomValue = Random.Shared.NextDouble() * totalDistance;
+
+                double cumulativeSum = 0.0;
+
+                var a = data
+                    .Zip(distances, (point, distance) => new { point, distance })
+                    .First(item => (cumulativeSum += item.distance) >= randomValue);
+
+
+                return a.point.Coordinates!;
+            }
         }
 
         public static List<ClusterData> KMeansClusterization(List<DataRow> data, int clustersCount)
@@ -132,15 +135,20 @@ namespace FSiDT_Lab
                 }
             }
 
-            return clustersDatas;
+            return clustersDatas.Where(IsNotEmpty).ToList();
+
+            bool IsNotEmpty(ClusterData clusterData)
+            {
+                return data.Any(dataRow => dataRow.ClusterIndex == clusterData.Index);
+            }
         }
 
         private static void ReassignClusters(List<DataRow> data, List<ClusterData> clusterDatas)
         {
             foreach (var dataRow in data)
             {
-                var nearestCenter = clusterDatas.MinBy(centerData =>
-                    Compute.EuclidDistance(dataRow.Coordinates!, centerData.Coordinates));
+                var nearestCenter = clusterDatas.MinBy(clusterData =>
+                    Compute.EuclideDistance(dataRow.Coordinates!, clusterData.Coordinates!));
 
                 var index = clusterDatas.IndexOf(nearestCenter!);
 

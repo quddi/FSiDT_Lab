@@ -371,12 +371,14 @@ namespace FSiDT_Lab
             {
                 var index = Compute.CHIndex(_context!.CurrentData!, i);
 
+                if (index == null) continue;
+
                 _context!.ClustersCountsEvaluation.Add
                 (
                     new ClustersCountEvaluationData
                     {
                         ClustersCount = i,
-                        Value = index
+                        Value = index!.Value
                     }
                 );
             }

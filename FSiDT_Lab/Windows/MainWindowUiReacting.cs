@@ -86,14 +86,26 @@ namespace FSiDT_Lab
             UpdateClustersCentersTable();
         }
 
-        private void PlotsElementsSizeSliderValueChangedHandler(object _, RoutedPropertyChangedEventArgs<double> __)
+        private void PlotsPointsSizeSliderValueChangedHandler(object _, RoutedPropertyChangedEventArgs<double> __)
         {
             if (!_isInitialized)
                 return;
 
-            PlotsElementsSizeTextBox.Text = PlotsElementsSizeSlider.Value.ToString("#.##");
+            PlotsPointsSizeTextBox.Text = PlotsPointsSizeSlider.Value.ToString("0.##");
 
             _context?.PlotsContext.SetPointsRadius(PointsRadius);
+
+            TwoSignsPlot.Refresh();
+            ParallelCoordinatesPlot.Refresh();
+        }
+
+        private void PlotsCentersSizeSliderValueChangedHandler(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (!_isInitialized)
+                return;
+
+            PlotsCentersSizeTextBox.Text = PlotsCentersSizeSlider.Value.ToString("0.##");
+
             _context?.PlotsContext.SetClustersCenters(ClustersCentersRadius, ClustersCentersLineWidth);
 
             TwoSignsPlot.Refresh();

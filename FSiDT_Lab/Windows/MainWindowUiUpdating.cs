@@ -255,12 +255,11 @@ namespace FSiDT_Lab
             {
                 var data = _context.ClustersDatas[i];
                 var coordinates = data.Coordinates!;
-                var color = data.Color;
 
                 var circle = TwoSignsPlot.Plot.Add.Circle(coordinates.Values[firstIndex],
                     coordinates.Values[secondIndex], ClustersCentersRadius);
 
-                circle.FillColor = color;
+                circle.FillColor = data.CenterColor;
                 circle.LineColor = Constants.ClustersCentersLineColor;
                 circle.LineWidth = ClustersCentersLineWidth;
 

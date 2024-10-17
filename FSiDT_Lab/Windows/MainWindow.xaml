@@ -52,11 +52,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="ClusterizeButton" Content="Кластеризувати" Margin="321,0,830,591" VerticalAlignment="Bottom" Height="23" FontSize="14" Click="ClusterizeButtonClickHandler"/>
-        <ComboBox x:Name="ClusterizationTypeDropDown" Margin="321,0,830,617" VerticalAlignment="Bottom" FontSize="14" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="k-means"/>
-            <ComboBoxItem Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Content="Ієрархічної: метод найближчого сусіда"/>
-        </ComboBox>
+        <Button x:Name="ClusterizeButton" Content="Кластеризувати" Margin="321,0,830,591" VerticalAlignment="Bottom" Height="48" FontSize="14" Click="ClusterizeButtonClickHandler"/>
         <DataGrid x:Name="ClustersCentersTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,1037,10" Height="317" FontSize="14" VerticalAlignment="Bottom">
             <DataGrid.RenderTransform>
                 <TransformGroup>
@@ -67,9 +63,9 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <TextBox Margin="0,0,130,591" TextWrapping="Wrap" Text="Розмір елементів" VerticalAlignment="Bottom" Height="47" HorizontalAlignment="Right" Width="202" TextAlignment="Center"/>
-        <Slider x:Name="PlotsElementsSizeSlider" HorizontalAlignment="Right" Margin="0,0,193,596" VerticalAlignment="Bottom" Width="130" Minimum="1" ValueChanged="PlotsElementsSizeSliderValueChangedHandler"/>
-        <TextBox x:Name="PlotsElementsSizeTextBox" HorizontalAlignment="Right" Margin="0,0,141,596" TextWrapping="Wrap" Text="1" VerticalAlignment="Bottom" Width="47" Height="19" FontSize="14" TextAlignment="Center" Foreground="#FF818181" Background="#FFEAEAEA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Focusable="False"/>
+        <TextBox Margin="0,0,163,591" TextWrapping="Wrap" Text="Розмір точок" VerticalAlignment="Bottom" Height="47" HorizontalAlignment="Right" Width="169" TextAlignment="Center"/>
+        <Slider x:Name="PlotsPointsSizeSlider" HorizontalAlignment="Right" Margin="0,0,215,594" VerticalAlignment="Bottom" Width="113" Minimum="0.05" ValueChanged="PlotsPointsSizeSliderValueChangedHandler" Value="-6"/>
+        <TextBox x:Name="PlotsPointsSizeTextBox" HorizontalAlignment="Right" Margin="0,0,168,594" TextWrapping="Wrap" Text="1" VerticalAlignment="Bottom" Width="47" Height="19" FontSize="14" TextAlignment="Center" Foreground="#FF818181" Background="#FFEAEAEA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Focusable="False"/>
         <wpf:WpfPlot x:Name="ClustersCountsEvaluationPlot" Height="254" VerticalAlignment="Bottom" Margin="0,0,10,332" HorizontalAlignment="Right" Width="322" FontSize="20"/>
         <DataGrid x:Name="ClustersCountsEvaluationTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,830,10" Height="317" FontSize="14" VerticalAlignment="Bottom" Focusable="False" HorizontalAlignment="Right" Width="202">
             <DataGrid.RenderTransform>
@@ -81,6 +77,9 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
+        <TextBox Margin="0,0,10,591" TextWrapping="Wrap" Text="Розмір центрів" VerticalAlignment="Bottom" Height="47" HorizontalAlignment="Right" Width="148" TextAlignment="Center"/>
+        <TextBox x:Name="PlotsCentersSizeTextBox" HorizontalAlignment="Right" Margin="0,0,15,594" TextWrapping="Wrap" Text="1" VerticalAlignment="Bottom" Width="47" Height="19" FontSize="14" TextAlignment="Center" Foreground="#FF818181" Background="#FFEAEAEA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Focusable="False"/>
+        <Slider x:Name="PlotsCentersSizeSlider" HorizontalAlignment="Right" Margin="0,0,62,594" VerticalAlignment="Bottom" Width="90" Minimum="0.05" Value="-6" ValueChanged="PlotsCentersSizeSliderValueChangedHandler"/>
 
     </Grid>
 </Window>

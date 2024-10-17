@@ -17,6 +17,8 @@ namespace FSiDT_Lab
         public const double PointsSizeMultiplier = 1.0;
         public const double ClustersCentersSizeMultiplier = 1.8;
         public const float ClustersCentersLineWidthMultiplier = 1.4f;
+        public const byte MaxColorComponentValue = 255;
+        public const byte CenterPointColorDifference = 50;
 
         public static readonly Color OkColor = Color.FromRgb(161, 255, 162);
         public static readonly Color NotOkColor = Color.FromRgb(255, 164, 161);

@@ -7,9 +7,9 @@ namespace FSiDT_Lab
         private bool _isInitialized;
         private Context? _context;
 
-        public double PointsRadius => PlotsElementsSizeSlider.Value * Constants.PointsSizeMultiplier;
-        public double ClustersCentersRadius => PlotsElementsSizeSlider.Value * Constants.ClustersCentersSizeMultiplier;
-        public float ClustersCentersLineWidth => (float)PlotsElementsSizeSlider.Value * Constants.ClustersCentersLineWidthMultiplier;
+        public double PointsRadius => PlotsPointsSizeSlider.Value * Constants.PointsSizeMultiplier;
+        public double ClustersCentersRadius => PlotsCentersSizeSlider.Value * Constants.ClustersCentersSizeMultiplier;
+        public float ClustersCentersLineWidth => (float)PlotsCentersSizeSlider.Value * Constants.ClustersCentersLineWidthMultiplier;
 
         public MainWindow()
         {

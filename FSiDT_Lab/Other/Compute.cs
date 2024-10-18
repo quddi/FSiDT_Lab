@@ -119,6 +119,11 @@ namespace FSiDT_Lab
 
         public static List<ClusterData> KMeansClusterization(List<DataRow> data, int clustersCount)
         {
+            //var clustersDatas = new List<ClusterData> 
+            //{ 
+            //    new ClusterData { Index = 0, Color = new ScottPlot.Color(255, 0, 0), Coordinates = new Coordinates { Values = [28, 31, 26, 24, 23 ]}},
+            //    new ClusterData { Index = 1, Color = new ScottPlot.Color(0, 255, 0), Coordinates = new Coordinates { Values = [33, 34, 30, 31, 29 ]}},
+            //};
             var clustersDatas = Compute.StartClustersCenters(data, clustersCount);
             var changedAnyCenter = true;
 
@@ -147,10 +152,11 @@ namespace FSiDT_Lab
         {
             foreach (var dataRow in data)
             {
-                var nearestCenter = clusterDatas.MinBy(clusterData =>
-                    Compute.EuclideDistance(dataRow.Coordinates!, clusterData.Coordinates!));
+                var distances = clusterDatas
+                    .Select(clusterData => EuclideDistance(dataRow.Coordinates!, clusterData.Coordinates!))
+                    .ToList();
 
-                var index = clusterDatas.IndexOf(nearestCenter!);
+                var index = distances.IndexOf(distances.Min());
 
                 dataRow.ClusterIndex = index;
             }
@@ -165,7 +171,7 @@ namespace FSiDT_Lab
             var newAverageCoordinates = Compute.AverageCoordinates(dimensions, grouping);
             var currentAverageCoordinates = data[grouping.Key!.Value];
 
-            if (newAverageCoordinates.IsEqual(currentAverageCoordinates.Coordinates!))
+            if (!newAverageCoordinates.IsEqual(currentAverageCoordinates.Coordinates!))
                 changedAnyCenter = true;
 
             clusterDatas[grouping.Key!.Value].Coordinates = newAverageCoordinates;

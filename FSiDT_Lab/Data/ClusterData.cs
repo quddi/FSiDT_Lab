@@ -28,6 +28,8 @@ namespace FSiDT_Lab
 
         public Coordinates? Coordinates { get; set; }
 
+        public Coordinates? AverageCoordinates { get; set; }
+
         public double this[int index]
         {
             get => Coordinates!.Values[index];

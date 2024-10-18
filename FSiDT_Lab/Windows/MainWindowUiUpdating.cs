@@ -1,12 +1,6 @@
-﻿
-using ScottPlot;
-using System.Diagnostics.Metrics;
-using System.Drawing;
-using System.Reflection.Metadata;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Media;
 
 namespace FSiDT_Lab
 {
@@ -120,6 +114,16 @@ namespace FSiDT_Lab
                     }
                 );
             }
+
+            ClustersCentersTable.Columns.Add
+            (
+                new DataGridTextColumn()
+                {
+                    Header = "Середнє",
+                    FontSize = Constants.FontSize,
+                    Binding = new Binding("AverageCoordinates"),
+                }
+            );
         } 
 
         private void UpdateClustersCountsEvaluationTable()
@@ -347,7 +351,7 @@ namespace FSiDT_Lab
                 return;
             }
 
-            if (1 < clustersCount && clustersCount < _context.CurrentData.Count / 2)
+            if (1 < clustersCount)
             {
                 ClustersCountMessageTextBox.Background = Constants.OkBrush;
                 ClustersCountMessageTextBox.Text = "✓";
@@ -356,7 +360,7 @@ namespace FSiDT_Lab
             else
             {
                 ClustersCountMessageTextBox.Background = Constants.NotOkBrush;
-                ClustersCountMessageTextBox.Text = $"Значення має бути [2, {_context.CurrentData.Count / 2}]!";
+                ClustersCountMessageTextBox.Text = $"Значення має бути більше 1!";
 
                 _context.ClustersCount = null;
             }

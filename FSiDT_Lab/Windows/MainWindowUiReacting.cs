@@ -41,7 +41,7 @@ namespace FSiDT_Lab
             UpdateSignComboBoxesState();
         }
 
-        private void SecondSignComboBoxSelectionChangedHandler(object sender, SelectionChangedEventArgs eventArgs)
+        private void SecondSignComboBoxSelectionChangedHandler(object _, SelectionChangedEventArgs __)
         {
             UpdateTwoSignsPlot();
             UpdateSignComboBoxesState();
@@ -66,6 +66,14 @@ namespace FSiDT_Lab
                 return;
 
             Clusterize();
+
+            foreach (var clusterData in _context!.ClustersDatas!)
+            {
+                clusterData.AverageCoordinates = _context.CurrentData!
+                    .Where(data => data.ClusterIndex == clusterData.Index)!
+                    .Select(data => data.Coordinates)!
+                    .Average();
+            }
         }
 
         private void Clusterize()
@@ -99,7 +107,7 @@ namespace FSiDT_Lab
             ParallelCoordinatesPlot.Refresh();
         }
 
-        private void PlotsCentersSizeSliderValueChangedHandler(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void PlotsCentersSizeSliderValueChangedHandler(object _, RoutedPropertyChangedEventArgs<double> __)
         {
             if (!_isInitialized)
                 return;

@@ -28,7 +28,7 @@
         {
             foreach (var value in Values)
             {
-                Constants.StringBuilder.Append(value.ToString()).Append(' ');
+                Constants.StringBuilder.Append(value.ToString("0.##")).Append(' ');
             }
 
             var result = Constants.StringBuilder.ToString();

@@ -8,7 +8,7 @@ namespace FSiDT_Lab
         public const int FontSize = 14;
         public const int NoElementComboBoxIndex = -1;
         public const int FirstElementIndex = 0;
-        public const int MaxClasterizationIterations = 50;
+        public const int MaxClasterizationIterations = 1000;
         public const int MaxColorComponent= 255;
         public const int EvaluationMinClustersCount = 2;
         public const int EvaluationMaxClustersCount = 14;
